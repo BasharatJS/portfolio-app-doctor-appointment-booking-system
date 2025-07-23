@@ -1,0 +1,751 @@
+/* WhyChooseUs.module.css */
+
+/* ===========================
+   WHY CHOOSE US SECTION
+   =========================== */
+
+.whyChooseUsSection {
+  padding: 5rem 0;
+  background: var(--background);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Decorations */
+.backgroundDecoration {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.05;
+  filter: blur(100px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.leftDecoration {
+  top: 10%;
+  left: -10%;
+  width: 300px;
+  height: 300px;
+  background: var(--primary-gradient);
+}
+
+.rightDecoration {
+  bottom: 10%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: var(--secondary-gradient);
+  filter: blur(120px);
+}
+
+/* Container */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* ===========================
+   SECTION HEADER
+   =========================== */
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.sectionBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 50px;
+  color: var(--medical-green);
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+/* NEW: Header Icon (Rotating) */
+.headerIcon {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.rotatingIcon {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  background: var(--primary-gradient);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 40px rgba(16, 185, 129, 0.3);
+  margin: 0 auto;
+}
+
+.rotatingIcon svg {
+  color: white;
+}
+
+/* NEW: Title Container */
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.sectionTitle {
+  font-size: 3rem;
+  font-weight: 800;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.highlightText {
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* NEW: Title Gradient Line */
+.titleGradientLine {
+  height: 4px;
+  width: 350px;
+  border-radius: 2px;
+  margin: 1rem auto 0;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, #10b981 0%, #0ea5e9 50%, #a855f7 100%);
+  transform-origin: left center;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+}
+
+/* Animated flowing gradient effect */
+.titleGradientLine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  animation: flowLeft 2s infinite;
+  animation-delay: 1.5s;
+}
+
+@keyframes flowLeft {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.sectionSubtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ===========================
+   FEATURES GRID
+   =========================== */
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* ===========================
+   FEATURE CARDS
+   =========================== */
+
+.cardWrapper {
+  position: relative;
+  will-change: transform, box-shadow;
+}
+
+.featureCard {
+  position: relative;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 2rem;
+  height: 100%;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform, box-shadow;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.featureCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: 20px 20px 0 0;
+  z-index: 2;
+}
+
+/* Card Background Glow */
+.cardGlow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Card Content */
+.cardContent {
+  position: relative;
+  z-index: 2;
+}
+
+/* ===========================
+   ICON SECTION
+   =========================== */
+
+.iconSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.iconWrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  transform-origin: center center;
+}
+
+.statsBadge {
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  backdrop-filter: blur(10px);
+}
+
+/* ===========================
+   CARD TEXT CONTENT
+   =========================== */
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.cardDescription {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ===========================
+   BENEFITS LIST
+   =========================== */
+
+.benefitsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.benefitItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.benefitText {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ===========================
+   FLOATING ICON
+   =========================== */
+
+.floatingIcon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  z-index: 3;
+  transform-origin: center center;
+}
+
+/* ===========================
+   BOTTOM CTA SECTION - FIXED
+   =========================== */
+
+.bottomCta {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 2rem;
+  background: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* ADD visible background for light theme */
+  border: 1px solid rgba(16, 185, 129, 0.15); /* ADD subtle border */
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* ADD subtle shadow */
+  transition: all 0.3s ease; /* ADD smooth transition */
+}
+
+.bottomCta:hover {
+  background: rgba(16, 185, 129, 0.05); /* KEEP original hover effect */
+  border-color: rgba(16, 185, 129, 0.2);
+  transform: translateY(-2px); /* ADD subtle lift on hover */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* ENHANCE shadow on hover */
+}
+
+.ctaIcon {
+  color: var(--medical-green);
+  margin-bottom: 1rem;
+}
+
+.ctaTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.ctaDescription {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ===========================
+   GREEN VARIANT
+   =========================== */
+
+.cardGreen::before {
+  background: var(--primary-gradient);
+}
+
+.iconGreen {
+  background: var(--primary-gradient);
+  box-shadow: 0 8px 24px rgba(5, 150, 105, 0.4);
+}
+
+.glowGreen {
+  background: var(--primary-gradient);
+}
+
+.statsGreen {
+  background: rgba(5, 150, 105, 0.15);
+  border: 1px solid rgba(5, 150, 105, 0.3);
+}
+
+.floatingGreen {
+  background: rgba(5, 150, 105, 0.2);
+}
+
+/* ===========================
+   BLUE VARIANT
+   =========================== */
+
+.cardBlue::before {
+  background: var(--secondary-gradient);
+}
+
+.iconBlue {
+  background: var(--secondary-gradient);
+  box-shadow: 0 8px 24px rgba(3, 105, 161, 0.4);
+}
+
+.glowBlue {
+  background: var(--secondary-gradient);
+}
+
+.statsBlue {
+  background: rgba(3, 105, 161, 0.15);
+  border: 1px solid rgba(3, 105, 161, 0.3);
+}
+
+.floatingBlue {
+  background: rgba(3, 105, 161, 0.2);
+}
+
+/* ===========================
+   PURPLE VARIANT
+   =========================== */
+
+.cardPurple::before {
+  background: var(--accent-gradient);
+}
+
+.iconPurple {
+  background: var(--accent-gradient);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.4);
+}
+
+.glowPurple {
+  background: var(--accent-gradient);
+}
+
+.statsPurple {
+  background: rgba(124, 58, 237, 0.15);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+}
+
+.floatingPurple {
+  background: rgba(124, 58, 237, 0.2);
+}
+
+/* ===========================
+   ORANGE VARIANT
+   =========================== */
+
+.cardOrange::before {
+  background: var(--warning-gradient);
+}
+
+.iconOrange {
+  background: var(--warning-gradient);
+  box-shadow: 0 8px 24px rgba(234, 88, 12, 0.4);
+}
+
+.glowOrange {
+  background: var(--warning-gradient);
+}
+
+.statsOrange {
+  background: rgba(234, 88, 12, 0.15);
+  border: 1px solid rgba(234, 88, 12, 0.3);
+}
+
+.floatingOrange {
+  background: rgba(234, 88, 12, 0.2);
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+   =========================== */
+
+/* Large Desktops (1400px and above) */
+@media (min-width: 1400px) {
+  .featuresGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Laptops (1024px and below) */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 2.5rem;
+  }
+
+  .titleGradientLine {
+    width: 300px;
+  }
+
+  .featuresGrid {
+    gap: 1.5rem;
+  }
+
+  .featureCard {
+    padding: 1.5rem;
+  }
+}
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+  .whyChooseUsSection {
+    padding: 4rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .headerIcon {
+    margin-bottom: 1rem;
+  }
+
+  .rotatingIcon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .titleGradientLine {
+    width: 250px;
+  }
+
+  .sectionSubtitle {
+    font-size: 1.125rem;
+  }
+
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .featureCard {
+    padding: 1.5rem;
+  }
+
+  .iconWrapper {
+    width: 50px;
+    height: 50px;
+  }
+
+  .cardTitle {
+    font-size: 1.25rem;
+  }
+
+  .cardDescription {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile Devices (480px and below) */
+@media (max-width: 480px) {
+  .whyChooseUsSection {
+    padding: 3rem 0;
+  }
+
+  .sectionHeader {
+    margin-bottom: 3rem;
+  }
+
+  .rotatingIcon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+
+  .titleGradientLine {
+    width: 200px;
+  }
+
+  .featureCard {
+    padding: 1.25rem;
+  }
+
+  .iconSection {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .statsBadge {
+    align-self: flex-end;
+  }
+
+  .bottomCta {
+    padding: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .ctaTitle {
+    font-size: 1.125rem;
+  }
+
+  .ctaDescription {
+    font-size: 0.9rem;
+  }
+}
+
+/* ===========================
+   ANIMATION ENHANCEMENTS
+   =========================== */
+
+/* Prevent flickering during animations */
+.featureCard,
+.iconWrapper,
+.cardGlow,
+.floatingIcon {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+}
+
+/* Smooth transitions for better performance */
+.featureCard {
+  transform-origin: center center;
+}
+
+.iconWrapper {
+  transform-origin: center center;
+}
+
+/* Floating animation for decorative icons */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(-2px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(2px) rotate(5deg);
+  }
+  50% {
+    transform: translateY(-2px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(2px) rotate(-5deg);
+  }
+}
+
+.floatingIcon {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Hover state optimizations */
+.featureCard:hover .floatingIcon {
+  animation-play-state: paused;
+  transform: scale(1.1);
+}
+
+/* ===========================
+   ACCESSIBILITY IMPROVEMENTS
+   =========================== */
+
+/* Focus states */
+.featureCard:focus-visible {
+  outline: 2px solid var(--medical-green);
+  outline-offset: 4px;
+}
+
+.bottomCta:focus-visible {
+  outline: 2px solid var(--medical-green);
+  outline-offset: 4px;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .featureCard,
+  .iconWrapper,
+  .floatingIcon {
+    transition: none;
+    animation: none;
+  }
+
+  .featureCard:hover {
+    transform: none;
+  }
+
+  .featureCard:hover .iconWrapper {
+    transform: none;
+  }
+}
+
+/* ===========================
+   DARK THEME ENHANCEMENTS
+   =========================== */
+
+[data-theme='dark'] .featureCard {
+  background: rgba(30, 41, 59, 0.8);
+  border-color: rgba(51, 65, 85, 0.6);
+}
+
+[data-theme='dark'] .featureCard:hover {
+  background: rgba(30, 41, 59, 0.9);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] .bottomCta {
+  background: rgba(30, 41, 59, 0.8); /* DARK theme background */
+  border-color: rgba(51, 65, 85, 0.6); /* DARK theme border */
+}
+
+[data-theme='dark'] .bottomCta:hover {
+  background: rgba(5, 150, 105, 0.1); /* KEEP original dark hover effect */
+  border-color: rgba(5, 150, 105, 0.3);
+}
+
+/* ===========================
+   PRINT STYLES
+   =========================== */
+
+@media print {
+  .whyChooseUsSection {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .featureCard {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+
+  .cardGlow,
+  .floatingIcon {
+    display: none;
+  }
+}

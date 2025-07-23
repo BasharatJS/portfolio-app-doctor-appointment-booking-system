@@ -1,0 +1,658 @@
+/* Treatments.module.css */
+
+/* ===========================
+   TREATMENTS SECTION
+   =========================== */
+
+.treatmentsSection {
+  padding: 5rem 0;
+  background: var(--hero-gradient);
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+/* Background Elements */
+.backgroundPattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+      circle at 75% 75%,
+      rgba(3, 105, 161, 0.05) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(168, 85, 247, 0.03) 0%,
+      transparent 70%
+    );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.floatingOrbs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.2;
+  animation: floatOrb 15s ease-in-out infinite;
+}
+
+.orb1 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #10b981, transparent);
+  top: 10%;
+  right: 10%;
+  animation-delay: 0s;
+}
+
+.orb2 {
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, #0ea5e9, transparent);
+  bottom: 20%;
+  left: 5%;
+  animation-delay: 8s;
+}
+
+@keyframes floatOrb {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+  33% {
+    transform: translateY(-40px) translateX(30px) scale(1.1);
+  }
+  66% {
+    transform: translateY(30px) translateX(-20px) scale(0.9);
+  }
+}
+
+/* Container */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* ===========================
+   HEADER SECTION
+   =========================== */
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sectionBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 50px;
+  color: var(--medical-green);
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.sectionBadge svg {
+  color: var(--medical-green);
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.2;
+  margin: 0 0 1.5rem 0;
+  color: var(--text-primary);
+}
+
+.gradientText {
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.titleGradientLine {
+  height: 4px;
+  width: 140px;
+  border-radius: 2px;
+  margin: 0 auto 2rem;
+  background: linear-gradient(90deg, #10b981 0%, #0ea5e9 50%, #a855f7 100%);
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-family: 'Inter', sans-serif;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ===========================
+   TREATMENTS GRID
+   =========================== */
+
+.treatmentsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.treatmentCard {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 2.5rem;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.treatmentCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--card-gradient-color);
+  border-radius: 24px 24px 0 0;
+}
+
+.treatmentCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--card-hover-shadow);
+  border-color: var(--card-border-hover);
+}
+
+/* Card Glow Effect */
+.cardGlow {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    var(--glow-color),
+    transparent 40%
+  );
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.treatmentCard:hover .cardGlow {
+  opacity: 1;
+}
+
+/* Icon Section */
+.iconContainer {
+  position: relative;
+  z-index: 10;
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  background: var(--icon-gradient);
+  box-shadow: var(--icon-shadow);
+  transition: all 0.3s ease;
+}
+
+.iconContainer svg {
+  color: white;
+}
+
+.treatmentCard:hover .iconContainer {
+  transform: rotate(-10deg) scale(1.05);
+}
+
+/* Content */
+.cardContent {
+  position: relative;
+  z-index: 10;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.treatmentTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.treatmentDescription {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  flex-grow: 1;
+}
+
+/* Features List */
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  transition: all 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateX(4px);
+}
+
+.featureDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--feature-dot-color);
+  flex-shrink: 0;
+}
+
+.featureText {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+}
+
+/* CTA Button */
+.ctaButton {
+  width: 100%;
+  background: var(--button-gradient-color);
+  border: none;
+  border-radius: 16px;
+  padding: 1rem 2rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: var(--button-shadow);
+  position: relative;
+  overflow: hidden;
+  margin-top: auto;
+}
+
+.ctaButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+  transition: all 0.6s ease;
+}
+
+.ctaButton:hover::before {
+  left: 100%;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: var(--button-hover-shadow);
+}
+
+/* Floating Element */
+.floatingElement {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  opacity: 0.2;
+  background: var(--floating-element-color);
+}
+
+/* ===========================
+   BOTTOM CTA
+   =========================== */
+
+.bottomCta {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.bottomCtaCard {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.bottomCtaCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.bottomCtaCard svg {
+  color: var(--medical-green);
+}
+
+.bottomCtaText {
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+}
+
+.bottomCtaLink {
+  color: var(--medical-green);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-left: 0.25rem;
+}
+
+.bottomCtaLink:hover {
+  color: var(--medical-blue);
+  text-decoration: underline;
+}
+
+/* ===========================
+   CARD VARIANTS
+   =========================== */
+
+/* Green Card */
+.treatmentCard.green {
+  --card-gradient-color: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  --card-hover-shadow: 0 25px 50px rgba(16, 185, 129, 0.4),
+    0 0 0 1px rgba(16, 185, 129, 0.1);
+  --card-border-hover: rgba(16, 185, 129, 0.3);
+  --glow-color: rgba(16, 185, 129, 0.4);
+  --icon-gradient: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  --icon-shadow: 0 8px 32px rgba(16, 185, 129, 0.4);
+  --feature-dot-color: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  --button-gradient-color: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  --button-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+  --button-hover-shadow: 0 8px 32px rgba(16, 185, 129, 0.4);
+  --floating-element-color: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+/* Blue Card */
+.treatmentCard.blue {
+  --card-gradient-color: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+  --card-hover-shadow: 0 25px 50px rgba(14, 165, 233, 0.4),
+    0 0 0 1px rgba(14, 165, 233, 0.1);
+  --card-border-hover: rgba(14, 165, 233, 0.3);
+  --glow-color: rgba(14, 165, 233, 0.4);
+  --icon-gradient: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+  --icon-shadow: 0 8px 32px rgba(14, 165, 233, 0.4);
+  --feature-dot-color: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+  --button-gradient-color: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+  --button-shadow: 0 4px 20px rgba(14, 165, 233, 0.4);
+  --button-hover-shadow: 0 8px 32px rgba(14, 165, 233, 0.4);
+  --floating-element-color: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+}
+
+/* Orange Card */
+.treatmentCard.orange {
+  --card-gradient-color: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  --card-hover-shadow: 0 25px 50px rgba(245, 158, 11, 0.4),
+    0 0 0 1px rgba(245, 158, 11, 0.1);
+  --card-border-hover: rgba(245, 158, 11, 0.3);
+  --glow-color: rgba(245, 158, 11, 0.4);
+  --icon-gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  --icon-shadow: 0 8px 32px rgba(245, 158, 11, 0.4);
+  --feature-dot-color: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  --button-gradient-color: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  --button-shadow: 0 4px 20px rgba(245, 158, 11, 0.4);
+  --button-hover-shadow: 0 8px 32px rgba(245, 158, 11, 0.4);
+  --floating-element-color: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+/* Red Card */
+.treatmentCard.red {
+  --card-gradient-color: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  --card-hover-shadow: 0 25px 50px rgba(239, 68, 68, 0.4),
+    0 0 0 1px rgba(239, 68, 68, 0.1);
+  --card-border-hover: rgba(239, 68, 68, 0.3);
+  --glow-color: rgba(239, 68, 68, 0.4);
+  --icon-gradient: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  --icon-shadow: 0 8px 32px rgba(239, 68, 68, 0.4);
+  --feature-dot-color: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  --button-gradient-color: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  --button-shadow: 0 4px 20px rgba(239, 68, 68, 0.4);
+  --button-hover-shadow: 0 8px 32px rgba(239, 68, 68, 0.4);
+  --floating-element-color: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+/* Purple Card */
+.treatmentCard.purple {
+  --card-gradient-color: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+  --card-hover-shadow: 0 25px 50px rgba(168, 85, 247, 0.4),
+    0 0 0 1px rgba(168, 85, 247, 0.1);
+  --card-border-hover: rgba(168, 85, 247, 0.3);
+  --glow-color: rgba(168, 85, 247, 0.4);
+  --icon-gradient: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+  --icon-shadow: 0 8px 32px rgba(168, 85, 247, 0.4);
+  --feature-dot-color: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+  --button-gradient-color: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+  --button-shadow: 0 4px 20px rgba(168, 85, 247, 0.4);
+  --button-hover-shadow: 0 8px 32px rgba(168, 85, 247, 0.4);
+  --floating-element-color: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+}
+
+/* Pink Card */
+.treatmentCard.pink {
+  --card-gradient-color: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
+  --card-hover-shadow: 0 25px 50px rgba(236, 72, 153, 0.4),
+    0 0 0 1px rgba(236, 72, 153, 0.1);
+  --card-border-hover: rgba(236, 72, 153, 0.3);
+  --glow-color: rgba(236, 72, 153, 0.4);
+  --icon-gradient: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
+  --icon-shadow: 0 8px 32px rgba(236, 72, 153, 0.4);
+  --feature-dot-color: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
+  --button-gradient-color: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
+  --button-shadow: 0 4px 20px rgba(236, 72, 153, 0.4);
+  --button-hover-shadow: 0 8px 32px rgba(236, 72, 153, 0.4);
+  --floating-element-color: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+   =========================== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .treatmentsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .treatmentsSection {
+    padding: 4rem 0;
+  }
+
+  .treatmentsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .treatmentCard {
+    padding: 2rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .header {
+    margin-bottom: 3rem;
+  }
+
+  .iconContainer {
+    width: 60px;
+    height: 60px;
+  }
+
+  .iconContainer svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .treatmentCard {
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .treatmentTitle {
+    font-size: 1.25rem;
+  }
+
+  .bottomCtaCard {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.25rem;
+  }
+}
+
+/* ===========================
+   DARK THEME SUPPORT
+   =========================== */
+
+[data-theme='dark'] .treatmentCard {
+  background: rgba(30, 41, 59, 0.8);
+  border-color: rgba(51, 65, 85, 0.6);
+}
+
+[data-theme='dark'] .bottomCtaCard {
+  background: rgba(30, 41, 59, 0.8);
+  border-color: rgba(51, 65, 85, 0.6);
+}
+
+[data-theme='dark'] .bottomCtaCard:hover {
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+/* ===========================
+   ACCESSIBILITY
+   =========================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .orb,
+  .floatingElement {
+    animation: none;
+  }
+
+  .treatmentCard:hover,
+  .ctaButton:hover,
+  .iconContainer {
+    transform: none;
+  }
+
+  .feature:hover {
+    transform: none;
+  }
+}
+
+/* Focus states for keyboard navigation */
+.treatmentCard:focus-visible,
+.ctaButton:focus-visible {
+  outline: 2px solid var(--medical-green);
+  outline-offset: 4px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .treatmentCard {
+    border-width: 2px;
+  }
+
+  .ctaButton {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+}
