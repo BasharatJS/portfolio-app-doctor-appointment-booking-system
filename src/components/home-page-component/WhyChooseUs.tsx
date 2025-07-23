@@ -12,6 +12,8 @@ import {
   CheckCircle,
   Clock,
   Stethoscope, // NEW: Changed from Activity to Stethoscope
+  Phone, // NEW: For Emergency Care
+  MapPin, // NEW: For Convenient Location
 } from 'lucide-react'
 import styles from './WhyChooseUs.module.css'
 import {
@@ -33,7 +35,7 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ className = '' }) => {
   const isInView = useInView(ref, { once: true, amount: 0.2 })
 
   // ===========================
-  // STATIC DATA
+  // STATIC DATA - EXPANDED TO 6 CARDS
   // ===========================
   const features: WhyChooseUsFeature[] = [
     {
@@ -91,6 +93,34 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ className = '' }) => {
         'Kid-Friendly Environment',
         'Parent Involvement',
       ],
+    },
+    // NEW: 5th Card - Emergency Care
+    {
+      id: 'emergency',
+      icon: Phone,
+      title: 'Emergency Support',
+      description:
+        'Round-the-clock emergency consultation and guidance for urgent pediatric concerns and health emergencies.',
+      stats: '24/7 Support',
+      color: '#dc2626',
+      colorClass: 'red',
+      benefits: [
+        'Immediate Response',
+        'Expert Guidance',
+        'Emergency Protocols',
+      ],
+    },
+    // NEW: 6th Card - Convenient Location
+    {
+      id: 'location',
+      icon: MapPin,
+      title: 'Convenient Location',
+      description:
+        'Easily accessible clinic location with ample parking, public transport connectivity, and modern facilities.',
+      stats: 'Prime Location',
+      color: '#059669',
+      colorClass: 'teal',
+      benefits: ['Easy Accessibility', 'Ample Parking', 'Modern Facilities'],
     },
   ]
 
@@ -210,7 +240,7 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ className = '' }) => {
           </motion.p>
         </motion.div>
 
-        {/* Features Grid */}
+        {/* Features Grid - Updated for 6 Cards */}
         <motion.div
           className={styles.featuresGrid}
           variants={containerVariants}

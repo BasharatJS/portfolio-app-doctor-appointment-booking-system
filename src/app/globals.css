@@ -403,17 +403,6 @@ a {
   font-size: 3rem;
 }
 
-/* Loading State */
-.loading-theme {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background: #ffffff;
-  color: #0f172a;
-  font-family: 'Inter', sans-serif;
-}
-
 /* Responsive Design */
 @media (max-width: 1024px) {
   .container {

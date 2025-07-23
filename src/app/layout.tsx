@@ -4,6 +4,7 @@ import './globals.css'
 import { ThemeProvider } from '../context/ThemeContext'
 import Header from '@/components/header/Header'
 import Footer from '@/components/footer/Footer'
+import LoadingProvider from '@/components/loading/LoadingProvider'
 
 // Font configurations
 const inter = Inter({
@@ -126,12 +127,11 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <ThemeProvider>
-          {/* Header Component */}
-          <Header />
-
-          {/* Main Content */}
-          <main className="main-content">{children}</main>
-          <Footer />
+          <LoadingProvider>
+            <Header />
+            <main className="main-content">{children}</main>
+            <Footer />
+          </LoadingProvider>
         </ThemeProvider>
       </body>
     </html>

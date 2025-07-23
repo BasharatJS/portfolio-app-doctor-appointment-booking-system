@@ -25,7 +25,7 @@ export default function HomePage() {
       <DoctorIntro />
       <WhyChooseUs />
       <TreatmentsOffered />
-      <PricingPlans />
+      {/* <PricingPlans /> */}
       <VideoConsultation />
     </div>
   )

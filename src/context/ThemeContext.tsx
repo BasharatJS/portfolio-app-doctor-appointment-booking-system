@@ -21,17 +21,15 @@ interface ThemeProviderProps {
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const [theme, setTheme] = useState<'light' | 'dark'>('light')
-  const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
-    // Set default theme to light and check for saved theme
+    // Set theme immediately without any loading screen
     const savedTheme = localStorage.getItem('theme') as 'light' | 'dark'
-    const initialTheme = savedTheme || 'light' // Default to light theme
+    const initialTheme = savedTheme || 'light'
 
     setTheme(initialTheme)
     document.documentElement.setAttribute('data-theme', initialTheme)
     document.documentElement.classList.toggle('dark', initialTheme === 'dark')
-    setIsLoaded(true)
   }, [])
 
   const toggleTheme = () => {
@@ -42,10 +40,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     document.documentElement.classList.toggle('dark', newTheme === 'dark')
   }
 
-  if (!isLoaded) {
-    return <div className="loading-theme">Loading...</div>
-  }
-
+  // NO LOADING SCREEN - Return children directly
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}

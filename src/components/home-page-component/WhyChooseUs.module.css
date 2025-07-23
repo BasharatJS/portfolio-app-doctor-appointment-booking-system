@@ -169,12 +169,13 @@
 }
 
 /* ===========================
-   FEATURES GRID
+   FEATURES GRID - UPDATED FOR 6 CARDS
    =========================== */
 
 .featuresGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* UPDATED: Force 3 columns on larger screens */
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: 3rem;
 }
@@ -375,9 +376,10 @@
 }
 
 /* ===========================
-   GREEN VARIANT
+   COLOR VARIANTS - EXISTING + NEW
    =========================== */
 
+/* GREEN VARIANT */
 .cardGreen::before {
   background: var(--primary-gradient);
 }
@@ -400,10 +402,7 @@
   background: rgba(5, 150, 105, 0.2);
 }
 
-/* ===========================
-   BLUE VARIANT
-   =========================== */
-
+/* BLUE VARIANT */
 .cardBlue::before {
   background: var(--secondary-gradient);
 }
@@ -426,10 +425,7 @@
   background: rgba(3, 105, 161, 0.2);
 }
 
-/* ===========================
-   PURPLE VARIANT
-   =========================== */
-
+/* PURPLE VARIANT */
 .cardPurple::before {
   background: var(--accent-gradient);
 }
@@ -452,10 +448,7 @@
   background: rgba(124, 58, 237, 0.2);
 }
 
-/* ===========================
-   ORANGE VARIANT
-   =========================== */
-
+/* ORANGE VARIANT */
 .cardOrange::before {
   background: var(--warning-gradient);
 }
@@ -478,14 +471,61 @@
   background: rgba(234, 88, 12, 0.2);
 }
 
+/* NEW: RED VARIANT - For Emergency Care */
+.cardRed::before {
+  background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+}
+
+.iconRed {
+  background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+  box-shadow: 0 8px 24px rgba(220, 38, 38, 0.4);
+}
+
+.glowRed {
+  background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+}
+
+.statsRed {
+  background: rgba(220, 38, 38, 0.15);
+  border: 1px solid rgba(220, 38, 38, 0.3);
+}
+
+.floatingRed {
+  background: rgba(220, 38, 38, 0.2);
+}
+
+/* NEW: TEAL VARIANT - For Location */
+.cardTeal::before {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+}
+
+.iconTeal {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  box-shadow: 0 8px 24px rgba(5, 150, 105, 0.4);
+}
+
+.glowTeal {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+}
+
+.statsTeal {
+  background: rgba(5, 150, 105, 0.15);
+  border: 1px solid rgba(5, 150, 105, 0.3);
+}
+
+.floatingTeal {
+  background: rgba(5, 150, 105, 0.2);
+}
+
 /* ===========================
-   RESPONSIVE DESIGN
+   RESPONSIVE DESIGN - UPDATED FOR 6 CARDS
    =========================== */
 
-/* Large Desktops (1400px and above) */
-@media (min-width: 1400px) {
+/* Large Desktops (1200px and above) */
+@media (min-width: 1200px) {
   .featuresGrid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* Keep 3 columns */
+    gap: 2.5rem;
   }
 }
 
@@ -504,6 +544,10 @@
   }
 
   .featuresGrid {
+    grid-template-columns: repeat(
+      3,
+      1fr
+    ); /* UPDATED: Keep 3 columns on laptops */
     gap: 1.5rem;
   }
 
@@ -544,7 +588,7 @@
   }
 
   .featuresGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Single column on tablets */
     gap: 1.5rem;
   }
 
@@ -747,5 +791,9 @@
   .cardGlow,
   .floatingIcon {
     display: none;
+  }
+
+  .featuresGrid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for printing */
   }
 }
