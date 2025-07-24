@@ -1,6 +1,6 @@
 import React from 'react'
 
-function BlogPage() {
+function ChambersPage() {
   return (
     <div
       style={{
@@ -17,4 +17,4 @@ function BlogPage() {
   )
 }
 
-export default BlogPage
+export default ChambersPage

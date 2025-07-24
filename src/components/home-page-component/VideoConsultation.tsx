@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import {
   Video,
@@ -29,6 +29,7 @@ import {
   VideoConsultationProps,
 } from '@/types'
 import styles from './VideoConsultation.module.css'
+import AppointmentModal from '@/components/modal/AppointmentModal'
 
 const VideoConsultation: React.FC<VideoConsultationProps> = ({
   className = '',
@@ -36,8 +37,17 @@ const VideoConsultation: React.FC<VideoConsultationProps> = ({
   appLink = 'https://bit.ly/docon-app',
   timings = 'Monday to Sunday 9:15 pm to 10:15 pm',
 }) => {
+  const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false)
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
+
+  const handleAppointmentClick = () => {
+    setIsAppointmentModalOpen(true)
+  }
+
+  const handleModalClose = () => {
+    setIsAppointmentModalOpen(false)
+  }
 
   return (
     <section ref={ref} className={`${styles.videoSection} ${className}`}>
@@ -129,6 +139,7 @@ const VideoConsultation: React.FC<VideoConsultationProps> = ({
             >
               <motion.button
                 className={styles.primaryButton}
+                onClick={handleAppointmentClick}
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -277,6 +288,11 @@ const VideoConsultation: React.FC<VideoConsultationProps> = ({
           </motion.div>
         </motion.div>
       </div>
+      {/* Appointment Modal */}
+      <AppointmentModal
+        isOpen={isAppointmentModalOpen}
+        onClose={handleModalClose}
+      />
     </section>
   )
 }

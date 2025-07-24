@@ -16,6 +16,7 @@ import {
 } from 'lucide-react'
 import styles from './HeroSection.module.css'
 import { motionVariants, motionTransitions } from '@/types'
+import AppointmentModal from '@/components/modal/AppointmentModal'
 
 // ===========================
 // COMPONENT INTERFACES
@@ -37,6 +38,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   // ===========================
   const router = useRouter()
   const [isVisible, setIsVisible] = useState(false)
+  const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false)
   const { scrollY } = useScroll()
   const y = useTransform(scrollY, [0, 300], [0, -50])
 
@@ -60,11 +62,17 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   // ===========================
   // EVENT HANDLERS
   // ===========================
-  const handleBookAppointment = () => {
-    onBookAppointment?.()
-    router.push('/appointment')
+  // const handleBookAppointment = () => {
+  //   onBookAppointment?.()
+  //   router.push('/appointment')
+  // }
+  const handleAppointmentClick = () => {
+    setIsAppointmentModalOpen(true)
   }
 
+  const handleModalClose = () => {
+    setIsAppointmentModalOpen(false)
+  }
   const handleExplorePlans = () => {
     onExplorePlans?.()
     const plansSection = document.getElementById('plans-section')
@@ -153,7 +161,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             >
               <motion.button
                 className={`${styles.primaryBtn} ${styles.ctaBtn}`}
-                onClick={handleBookAppointment}
+                onClick={handleAppointmentClick}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 transition={motionTransitions.smooth}
@@ -324,6 +332,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           </motion.div>
         </motion.div>
       </div>
+      {/* Appointment Modal */}
+      <AppointmentModal
+        isOpen={isAppointmentModalOpen}
+        onClose={handleModalClose}
+      />
     </section>
   )
 }

@@ -3,6 +3,7 @@
 import DoctorIntro from '@/components/home-page-component/DoctorIntro'
 import HeroSection from '@/components/home-page-component/HeroSection'
 import PricingPlans from '@/components/home-page-component/PricingPlans'
+import Testimonials from '@/components/home-page-component/Testimonials'
 import TreatmentsOffered from '@/components/home-page-component/Treatments'
 import VideoConsultation from '@/components/home-page-component/VideoConsultation'
 import WhyChooseUs from '@/components/home-page-component/WhyChooseUs'
@@ -27,6 +28,7 @@ export default function HomePage() {
       <TreatmentsOffered />
       {/* <PricingPlans /> */}
       <VideoConsultation />
+      <Testimonials />
     </div>
   )
 }

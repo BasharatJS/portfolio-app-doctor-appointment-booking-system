@@ -20,332 +20,23 @@ export interface NavigationItem {
   isActive?: boolean
 }
 
-// Animation Variants Types
-export const headerVariants: Variants = {
-  initial: {
-    y: -100,
-    opacity: 0,
-  },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.6,
-      ease: [0.6, -0.05, 0.01, 0.99],
-    },
-  },
+// Appointment Modal Types
+export interface AppointmentModalProps {
+  isOpen: boolean
+  onClose: () => void
 }
 
-export const navVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: -20,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      staggerChildren: 0.1,
-      ease: [0.6, -0.05, 0.01, 0.99],
-    },
-  },
+export interface AppointmentFormData {
+  name: string
+  mobile: string
+  email: string
+  chamber: string
+  symptoms: string
 }
 
-export const itemVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: -10,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.3,
-      ease: [0.6, -0.05, 0.01, 0.99],
-    },
-  },
-}
-
-export const mobileMenuVariants: Variants = {
-  closed: {
-    opacity: 0,
-    height: 0,
-    transition: {
-      duration: 0.3,
-      ease: [0.6, -0.05, 0.01, 0.99],
-    },
-  },
-  open: {
-    opacity: 1,
-    height: 'auto',
-    transition: {
-      duration: 0.3,
-      ease: [0.6, -0.05, 0.01, 0.99],
-    },
-  },
-}
-
-// Page Animation Variants
-export const pageVariants: Variants = {
-  initial: {
-    opacity: 0,
-    y: 20,
-  },
-  animate: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: [0.6, -0.05, 0.01, 0.99],
-    },
-  },
-  exit: {
-    opacity: 0,
-    y: -20,
-    transition: {
-      duration: 0.3,
-      ease: [0.6, -0.05, 0.01, 0.99],
-    },
-  },
-}
-
-export const containerVariants: Variants = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      duration: 0.8,
-      staggerChildren: 0.2,
-      ease: [0.6, -0.05, 0.01, 0.99],
-    },
-  },
-}
-
-export const fadeInVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 30,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: [0.6, -0.05, 0.01, 0.99],
-    },
-  },
-}
-
-// Button Hover Variants
-export const buttonHoverVariants: Variants = {
-  initial: {
-    scale: 1,
-  },
-  hover: {
-    scale: 1.05,
-    transition: {
-      duration: 0.2,
-      ease: [0.6, -0.05, 0.01, 0.99],
-    },
-  },
-  tap: {
-    scale: 0.95,
-    transition: {
-      duration: 0.1,
-      ease: [0.6, -0.05, 0.01, 0.99],
-    },
-  },
-}
-
-// Card Hover Variants
-export const cardHoverVariants: Variants = {
-  initial: {
-    y: 0,
-    scale: 1,
-  },
-  hover: {
-    y: -5,
-    scale: 1.02,
-    transition: {
-      duration: 0.3,
-      ease: [0.6, -0.05, 0.01, 0.99],
-    },
-  },
-}
-
-// Theme Toggle Variants
-export const themeToggleVariants: Variants = {
-  light: {
-    x: 0,
-    transition: {
-      duration: 0.3,
-      ease: [0.6, -0.05, 0.01, 0.99],
-    },
-  },
-  dark: {
-    x: 28,
-    transition: {
-      duration: 0.3,
-      ease: [0.6, -0.05, 0.01, 0.99],
-    },
-  },
-}
-
-// Why Choose Us Component Variants
-export const whyChooseUsContainerVariants: Variants = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      duration: 0.6,
-      staggerChildren: 0.2,
-      ease: [0.6, -0.05, 0.01, 0.99],
-    },
-  },
-}
-
-export const whyChooseUsCardVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 50,
-    scale: 0.9,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      duration: 0.6,
-      ease: [0.25, 0.46, 0.45, 0.94],
-    },
-  },
-}
-
-export const whyChooseUsIconVariants: Variants = {
-  rest: {
-    scale: 1,
-    rotate: 0,
-  },
-  hover: {
-    scale: 1.1,
-    rotate: 5,
-    transition: {
-      duration: 0.3,
-      ease: 'easeOut',
-    },
-  },
-}
-
-export const whyChooseUsCardHoverVariants: Variants = {
-  rest: {
-    y: 0,
-    scale: 1,
-  },
-  hover: {
-    y: -8,
-    scale: 1.02,
-    transition: {
-      duration: 0.3,
-      ease: 'easeOut',
-    },
-  },
-}
-
-export const whyChooseUsGlowVariants: Variants = {
-  rest: {
-    opacity: 0,
-  },
-  hover: {
-    opacity: 0.1,
-    transition: {
-      duration: 0.3,
-      ease: 'easeOut',
-    },
-  },
-}
-
-// Pricing Plans Component Variants
-export const pricingContainerVariants: Variants = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      duration: 0.8,
-      staggerChildren: 0.2,
-      ease: [0.6, -0.05, 0.01, 0.99],
-    },
-  },
-}
-
-export const pricingCardVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 60,
-    scale: 0.9,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      duration: 0.7,
-      ease: [0.25, 0.46, 0.45, 0.94],
-    },
-  },
-}
-
-export const pricingCardHoverVariants: Variants = {
-  initial: {
-    y: 0,
-    scale: 1,
-  },
-  hover: {
-    y: -10,
-    scale: 1.02,
-    transition: {
-      duration: 0.3,
-      ease: [0.6, -0.05, 0.01, 0.99],
-    },
-  },
-}
-
-export const pricingFeatureVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    x: -20,
-  },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.4,
-      ease: [0.6, -0.05, 0.01, 0.99],
-    },
-  },
-}
-
-// Custom Transition Presets
-export const springTransition: Transition = {
-  type: 'spring',
-  stiffness: 300,
-  damping: 30,
-}
-
-export const smoothTransition: Transition = {
-  duration: 0.3,
-  ease: [0.6, -0.05, 0.01, 0.99],
-}
-
-export const quickTransition: Transition = {
-  duration: 0.2,
-  ease: [0.6, -0.05, 0.01, 0.99],
+export interface ChamberOption {
+  value: string
+  label: string
 }
 
 // Plan Types for Homepage
@@ -489,6 +180,288 @@ export interface ThemeColors {
   border: string
 }
 
+// Video Consultation Component Types
+export interface VideoConsultationProps {
+  className?: string
+  doctorName?: string
+  appLink?: string
+  timings?: string
+}
+
+// Footer Component Types
+export interface FooterProps {
+  className?: string
+}
+
+export interface SocialLink {
+  id: string
+  name: string
+  url: string
+  icon: React.ElementType
+}
+
+export interface QuickLink {
+  id: string
+  label: string
+  path: string
+}
+
+export interface AddressInfo {
+  id: string
+  type: 'location' | 'phone' | 'email'
+  label: string
+  value: string
+  icon: React.ElementType
+}
+
+// Treatment Component Types
+export interface Treatment {
+  id: string
+  title: string
+  description: string
+  icon: React.ElementType
+  features: string[]
+  colorVariant: 'green' | 'blue' | 'orange' | 'red' | 'purple' | 'pink'
+}
+
+export interface TreatmentsOfferedProps {
+  className?: string
+}
+
+// Animation Variants Types
+export const headerVariants: Variants = {
+  initial: {
+    y: -100,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      ease: [0.6, -0.05, 0.01, 0.99],
+    },
+  },
+}
+
+export const navVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: -20,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      staggerChildren: 0.1,
+      ease: [0.6, -0.05, 0.01, 0.99],
+    },
+  },
+}
+
+export const itemVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: -10,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.3,
+      ease: [0.6, -0.05, 0.01, 0.99],
+    },
+  },
+}
+
+export const mobileMenuVariants: Variants = {
+  closed: {
+    opacity: 0,
+    height: 0,
+    transition: {
+      duration: 0.3,
+      ease: [0.6, -0.05, 0.01, 0.99],
+    },
+  },
+  open: {
+    opacity: 1,
+    height: 'auto',
+    transition: {
+      duration: 0.3,
+      ease: [0.6, -0.05, 0.01, 0.99],
+    },
+  },
+}
+
+// Modal Animation Variants
+export const modalOverlayVariants: Variants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.3,
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      duration: 0.3,
+    },
+  },
+}
+
+export const modalVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    scale: 0.8,
+    y: 50,
+  },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: {
+      duration: 0.4,
+      ease: [0.6, -0.05, 0.01, 0.99],
+    },
+  },
+  exit: {
+    opacity: 0,
+    scale: 0.8,
+    y: 50,
+    transition: {
+      duration: 0.3,
+      ease: [0.6, -0.05, 0.01, 0.99],
+    },
+  },
+}
+
+export const formItemVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.6, -0.05, 0.01, 0.99],
+    },
+  },
+}
+
+// Page Animation Variants
+export const pageVariants: Variants = {
+  initial: {
+    opacity: 0,
+    y: 20,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.6, -0.05, 0.01, 0.99],
+    },
+  },
+  exit: {
+    opacity: 0,
+    y: -20,
+    transition: {
+      duration: 0.3,
+      ease: [0.6, -0.05, 0.01, 0.99],
+    },
+  },
+}
+
+export const containerVariants: Variants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.8,
+      staggerChildren: 0.2,
+      ease: [0.6, -0.05, 0.01, 0.99],
+    },
+  },
+}
+
+export const fadeInVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.6, -0.05, 0.01, 0.99],
+    },
+  },
+}
+
+// Button Hover Variants
+export const buttonHoverVariants: Variants = {
+  initial: {
+    scale: 1,
+  },
+  hover: {
+    scale: 1.05,
+    transition: {
+      duration: 0.2,
+      ease: [0.6, -0.05, 0.01, 0.99],
+    },
+  },
+  tap: {
+    scale: 0.95,
+    transition: {
+      duration: 0.1,
+      ease: [0.6, -0.05, 0.01, 0.99],
+    },
+  },
+}
+
+// Card Hover Variants
+export const cardHoverVariants: Variants = {
+  initial: {
+    y: 0,
+    scale: 1,
+  },
+  hover: {
+    y: -5,
+    scale: 1.02,
+    transition: {
+      duration: 0.3,
+      ease: [0.6, -0.05, 0.01, 0.99],
+    },
+  },
+}
+
+// Theme Toggle Variants
+export const themeToggleVariants: Variants = {
+  light: {
+    x: 0,
+    transition: {
+      duration: 0.3,
+      ease: [0.6, -0.05, 0.01, 0.99],
+    },
+  },
+  dark: {
+    x: 28,
+    transition: {
+      duration: 0.3,
+      ease: [0.6, -0.05, 0.01, 0.99],
+    },
+  },
+}
+
 // Hero Section Variants
 export const heroContainerVariants: Variants = {
   hidden: {
@@ -527,6 +500,143 @@ export const floatingVariants: Variants = {
       duration: 6,
       repeat: Infinity,
       ease: 'easeInOut',
+    },
+  },
+}
+
+// Why Choose Us Component Variants
+export const whyChooseUsContainerVariants: Variants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      staggerChildren: 0.2,
+      ease: [0.6, -0.05, 0.01, 0.99],
+    },
+  },
+}
+
+export const whyChooseUsCardVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 50,
+    scale: 0.9,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
+  },
+}
+
+export const whyChooseUsIconVariants: Variants = {
+  rest: {
+    scale: 1,
+    rotate: 0,
+  },
+  hover: {
+    scale: 1.1,
+    rotate: 5,
+    transition: {
+      duration: 0.3,
+      ease: 'easeOut',
+    },
+  },
+}
+
+export const whyChooseUsCardHoverVariants: Variants = {
+  rest: {
+    y: 0,
+    scale: 1,
+  },
+  hover: {
+    y: -8,
+    scale: 1.02,
+    transition: {
+      duration: 0.3,
+      ease: 'easeOut',
+    },
+  },
+}
+
+export const whyChooseUsGlowVariants: Variants = {
+  rest: {
+    opacity: 0,
+  },
+  hover: {
+    opacity: 0.1,
+    transition: {
+      duration: 0.3,
+      ease: 'easeOut',
+    },
+  },
+}
+
+// Pricing Plans Component Variants
+export const pricingContainerVariants: Variants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.8,
+      staggerChildren: 0.2,
+      ease: [0.6, -0.05, 0.01, 0.99],
+    },
+  },
+}
+
+export const pricingCardVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 60,
+    scale: 0.9,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.7,
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
+  },
+}
+
+export const pricingCardHoverVariants: Variants = {
+  initial: {
+    y: 0,
+    scale: 1,
+  },
+  hover: {
+    y: -10,
+    scale: 1.02,
+    transition: {
+      duration: 0.3,
+      ease: [0.6, -0.05, 0.01, 0.99],
+    },
+  },
+}
+
+export const pricingFeatureVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    x: -20,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.4,
+      ease: [0.6, -0.05, 0.01, 0.99],
     },
   },
 }
@@ -608,14 +718,6 @@ export const treatmentFeatureVariants: Variants = {
       ease: [0.6, -0.05, 0.01, 0.99],
     },
   },
-}
-
-// Video Consultation Component Types
-export interface VideoConsultationProps {
-  className?: string
-  doctorName?: string
-  appLink?: string
-  timings?: string
 }
 
 // Video Consultation Animation Variants
@@ -712,32 +814,6 @@ export const videoFloatingVariants: Variants = {
   },
 }
 
-// Footer Component Types
-export interface FooterProps {
-  className?: string
-}
-
-export interface SocialLink {
-  id: string
-  name: string
-  url: string
-  icon: React.ElementType
-}
-
-export interface QuickLink {
-  id: string
-  label: string
-  path: string
-}
-
-export interface AddressInfo {
-  id: string
-  type: 'location' | 'phone' | 'email'
-  label: string
-  value: string
-  icon: React.ElementType
-}
-
 // Footer Animation Variants
 export const footerContainerVariants: Variants = {
   hidden: {
@@ -815,12 +891,32 @@ export const footerBottomVariants: Variants = {
   },
 }
 
+// Custom Transition Presets
+export const springTransition: Transition = {
+  type: 'spring',
+  stiffness: 300,
+  damping: 30,
+}
+
+export const smoothTransition: Transition = {
+  duration: 0.3,
+  ease: [0.6, -0.05, 0.01, 0.99],
+}
+
+export const quickTransition: Transition = {
+  duration: 0.2,
+  ease: [0.6, -0.05, 0.01, 0.99],
+}
+
 // Export all variants for easy import
 export const motionVariants = {
   header: headerVariants,
   nav: navVariants,
   item: itemVariants,
   mobileMenu: mobileMenuVariants,
+  modalOverlay: modalOverlayVariants,
+  modal: modalVariants,
+  formItem: formItemVariants,
   page: pageVariants,
   container: containerVariants,
   fadeIn: fadeInVariants,
@@ -868,31 +964,3 @@ export const motionTransitions = {
   smooth: smoothTransition,
   quick: quickTransition,
 }
-
-// Add these interfaces to your existing types/index.ts file
-
-// Treatment Component Types
-export interface Treatment {
-  id: string
-  title: string
-  description: string
-  icon: React.ElementType
-  features: string[]
-  colorVariant: 'green' | 'blue' | 'orange' | 'red' | 'purple' | 'pink'
-}
-
-export interface TreatmentsOfferedProps {
-  className?: string
-}
-
-// Add to the existing motionVariants export
-// export const motionVariants = {
-//   // ... existing variants
-
-//   // Treatment variants
-//   treatmentContainer: treatmentContainerVariants,
-//   treatmentCard: treatmentCardVariants,
-//   treatmentHeader: treatmentHeaderVariants,
-//   treatmentIcon: treatmentIconVariants,
-//   treatmentFeature: treatmentFeatureVariants,
-// }
