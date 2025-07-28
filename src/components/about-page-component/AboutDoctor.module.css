@@ -1,0 +1,1090 @@
+/* ===========================
+   ABOUT DOCTOR SECTION
+   =========================== */
+
+.aboutDoctorSection {
+  padding: 14rem 0 6rem 0;
+  background: var(--background);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Decorations */
+.backgroundDecoration {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.06;
+  filter: blur(100px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.leftDecoration {
+  top: 15%;
+  left: -15%;
+  width: 400px;
+  height: 400px;
+  background: var(--primary-gradient);
+}
+
+.rightDecoration {
+  bottom: 15%;
+  right: -15%;
+  width: 500px;
+  height: 500px;
+  background: var(--secondary-gradient);
+  filter: blur(120px);
+}
+
+/* Container */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* ===========================
+   SECTION HEADER
+   =========================== */
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.sectionBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 50px;
+  color: var(--medical-green);
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.sectionTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-primary);
+  margin: 0 0 1.5rem 0;
+  line-height: 1.2;
+}
+
+.highlightText {
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.titleGradientLine {
+  height: 4px;
+  width: 400px;
+  border-radius: 2px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, #10b981 0%, #0ea5e9 50%, #a855f7 100%);
+  transform-origin: left center;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+}
+
+.titleGradientLine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  animation: flowLeft 2s infinite;
+  animation-delay: 1.5s;
+}
+
+@keyframes flowLeft {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* ===========================
+   TOP SECTION - DOCTOR DETAILS & IMAGE
+   =========================== */
+
+.topSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: stretch; /* Changed to stretch for equal height */
+  margin-bottom: 5rem;
+}
+
+/* Doctor Details */
+.doctorDetails {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 8px 32px var(--shadow-light);
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer; /* Added cursor pointer */
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Added transition */
+  min-height: 550px; /* Set minimum height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.doctorDetails::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--primary-gradient);
+  border-radius: 20px 20px 0 0;
+}
+
+/* Doctor Details Hover Effect */
+.doctorDetails::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  border-radius: 20px 20px 0 0;
+  background: linear-gradient(
+    to bottom,
+    #059669 0%,
+    #10b981 30%,
+    rgba(16, 185, 129, 0.6) 70%,
+    rgba(16, 185, 129, 0.2) 100%
+  );
+  transition: height 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 1;
+  opacity: 0.3;
+}
+
+.doctorDetails:hover::after {
+  height: 100%;
+  border-radius: 20px;
+  opacity: 0.4;
+}
+
+.doctorDetails:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(16, 185, 129, 0.3);
+  border-color: rgba(16, 185, 129, 0.5);
+}
+
+/* Ensure content is above hover effect */
+.doctorTitle,
+.doctorDescription,
+.doctorExtraInfo {
+  position: relative;
+  z-index: 2;
+}
+
+.doctorTitle {
+  margin-bottom: 2rem;
+}
+
+.doctorName {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 1.5rem 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.qualificationsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.qualification {
+  padding: 0.5rem 1rem;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 25px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--medical-green);
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 2;
+}
+
+.doctorDescription,
+.doctorExtraInfo {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  font-family: 'Inter', sans-serif;
+  margin: 0 0 1.5rem 0;
+}
+
+.doctorExtraInfo {
+  margin-bottom: 0;
+}
+
+/* Doctor Image Section */
+.doctorImageSection {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px var(--shadow-light);
+  backdrop-filter: blur(20px);
+  overflow: hidden;
+  cursor: pointer; /* Added cursor pointer */
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Added transition */
+  min-height: 550px; /* Same height as doctor details */
+}
+
+/* Image Section Hover Effect */
+.doctorImageSection::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  border-radius: 20px 20px 0 0;
+  background: linear-gradient(
+    to bottom,
+    #0369a1 0%,
+    #0ea5e9 30%,
+    rgba(14, 165, 233, 0.6) 70%,
+    rgba(14, 165, 233, 0.2) 100%
+  );
+  transition: height 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 1;
+  opacity: 0.3;
+}
+
+.doctorImageSection:hover::after {
+  height: 100%;
+  border-radius: 20px;
+  opacity: 0.4;
+}
+
+.doctorImageSection:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(14, 165, 233, 0.3);
+  border-color: rgba(14, 165, 233, 0.5);
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2; /* Ensure image is above hover effect */
+}
+
+/* Floating Icons Around Image */
+.floatingIcon {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(15px);
+  color: var(--medical-green);
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.2);
+  z-index: 3;
+}
+
+/* Doctor Image Wrapper */
+.doctorImageWrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.imageGradientBorder {
+  position: relative;
+  padding: 6px;
+  border-radius: 24px;
+  background: var(--primary-gradient);
+  box-shadow: 0 20px 60px rgba(16, 185, 129, 0.3);
+  transition: all 0.4s ease;
+}
+
+.imageGradientBorder:hover {
+  box-shadow: 0 30px 80px rgba(16, 185, 129, 0.4);
+  transform: translateY(-5px);
+}
+
+.doctorImage {
+  width: 450px;
+  height: 550px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 20px;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+/* Experience Badge */
+.experienceBadge {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 80px;
+  height: 80px;
+  background: var(--primary-gradient);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4);
+  z-index: 4;
+  border: 4px solid var(--background);
+}
+
+.badgeContent {
+  text-align: center;
+  color: white;
+}
+
+.badgeNumber {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.badgeText {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+/* Achievement Badge */
+.achievementBadge {
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: var(--secondary-gradient);
+  border-radius: 50px;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(3, 105, 161, 0.4);
+  z-index: 4;
+  border: 3px solid var(--background);
+  backdrop-filter: blur(10px);
+}
+
+/* Background Glow Effect */
+.imageGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 500px;
+  background: var(--primary-gradient);
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.4;
+  z-index: 1;
+}
+
+/* ===========================
+   BOTTOM SECTION - THREE CARDS
+   =========================== */
+
+.bottomSection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* Info Cards */
+.infoCard {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 32px var(--shadow-light);
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  min-height: 400px;
+}
+
+/* Card Header */
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.cardIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-gradient);
+  color: white;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Card Content */
+.cardContent {
+  position: relative;
+  z-index: 2;
+}
+
+/* Achievement Items */
+.achievementItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.achievementItem:hover {
+  transform: translateX(5px);
+}
+
+.achievementIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.achievementText h5 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.25rem 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.achievementText p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Specialization Items */
+.specializationItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.specializationItem:hover {
+  transform: translateX(5px);
+}
+
+.checkIcon {
+  color: var(--medical-green);
+  flex-shrink: 0;
+}
+
+/* Affiliation Items */
+.affiliationItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.affiliationItem:hover {
+  transform: translateX(5px);
+}
+
+.locationIcon {
+  color: var(--medical-green);
+  flex-shrink: 0;
+}
+
+.affiliationText h5 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.25rem 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.affiliationText p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin: 0;
+  font-style: italic;
+}
+
+/* ===========================
+   HOVER EFFECTS FOR CARDS
+   =========================== */
+
+/* Base Hover Effect */
+.hoverEffect {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  border-radius: 0 0 20px 20px;
+  transition: height 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 1;
+  opacity: 0.3; /* Increased opacity for better visibility */
+}
+
+/* Achievements Card Hover - Strong Green Gradient */
+.achievementsCard .hoverEffect {
+  background: linear-gradient(
+    to top,
+    #059669 0%,
+    #10b981 30%,
+    rgba(16, 185, 129, 0.6) 70%,
+    rgba(16, 185, 129, 0.2) 100%
+  );
+}
+
+.achievementsCard:hover .hoverEffect {
+  height: 100%;
+  border-radius: 20px;
+  opacity: 0.4; /* More visible on hover */
+}
+
+.achievementsCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(16, 185, 129, 0.3);
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+/* Specializations Card Hover - Strong Blue Gradient */
+.specializationsCard .hoverEffect {
+  background: linear-gradient(
+    to top,
+    #0369a1 0%,
+    #0ea5e9 30%,
+    rgba(14, 165, 233, 0.6) 70%,
+    rgba(14, 165, 233, 0.2) 100%
+  );
+}
+
+.specializationsCard:hover .hoverEffect {
+  height: 100%;
+  border-radius: 20px;
+  opacity: 0.4; /* More visible on hover */
+}
+
+.specializationsCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(14, 165, 233, 0.3);
+  border-color: rgba(14, 165, 233, 0.4);
+}
+
+/* Affiliations Card Hover - Strong Purple Gradient */
+.affiliationsCard .hoverEffect {
+  background: linear-gradient(
+    to top,
+    #7c3aed 0%,
+    #a855f7 30%,
+    rgba(168, 85, 247, 0.6) 70%,
+    rgba(168, 85, 247, 0.2) 100%
+  );
+}
+
+.affiliationsCard:hover .hoverEffect {
+  height: 100%;
+  border-radius: 20px;
+  opacity: 0.4; /* More visible on hover */
+}
+
+.affiliationsCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(168, 85, 247, 0.3);
+  border-color: rgba(168, 85, 247, 0.4);
+}
+
+/* Enhanced Card Border Effects on Hover */
+.achievementsCard:hover {
+  border-color: rgba(16, 185, 129, 0.5);
+}
+
+.specializationsCard:hover {
+  border-color: rgba(14, 165, 233, 0.5);
+}
+
+.affiliationsCard:hover {
+  border-color: rgba(168, 85, 247, 0.5);
+}
+
+/* Card Icon Colors */
+.specializationsCard .cardIcon {
+  background: var(--secondary-gradient);
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+}
+
+.affiliationsCard .cardIcon {
+  background: var(--accent-gradient);
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+   =========================== */
+
+/* Large Desktops (1200px and above) */
+@media (min-width: 1200px) {
+  .topSection {
+    gap: 6rem;
+  }
+
+  .doctorImage {
+    width: 500px;
+    height: 600px;
+  }
+
+  .bottomSection {
+    gap: 3rem;
+  }
+}
+
+/* Laptops (1024px and below) */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 3rem;
+  }
+
+  .titleGradientLine {
+    width: 350px;
+  }
+
+  .topSection {
+    gap: 4rem;
+  }
+
+  .doctorImage {
+    width: 400px;
+    height: 500px;
+  }
+
+  .doctorName {
+    font-size: 2.2rem;
+  }
+
+  .bottomSection {
+    gap: 1.5rem;
+  }
+
+  .infoCard {
+    padding: 2rem;
+    min-height: 350px;
+  }
+}
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+  .aboutDoctorSection {
+    padding: 6rem 0 4rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .sectionHeader {
+    margin-bottom: 3rem;
+  }
+
+  .sectionTitle {
+    font-size: 2.5rem;
+  }
+
+  .titleGradientLine {
+    width: 300px;
+  }
+
+  .topSection {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    align-items: start; /* Reset alignment for mobile */
+  }
+
+  .doctorImageSection {
+    order: -1;
+    min-height: 450px; /* Adjusted for mobile */
+  }
+
+  .doctorDetails {
+    min-height: auto; /* Auto height for mobile */
+  }
+
+  .doctorImage {
+    width: 350px;
+    height: 450px;
+  }
+
+  .doctorDetails {
+    padding: 2rem;
+  }
+
+  .doctorName {
+    font-size: 2rem;
+  }
+
+  .bottomSection {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .infoCard {
+    padding: 2rem;
+    min-height: auto;
+  }
+
+  .floatingIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .experienceBadge {
+    width: 70px;
+    height: 70px;
+  }
+
+  .badgeNumber {
+    font-size: 1.125rem;
+  }
+
+  .badgeText {
+    font-size: 0.7rem;
+  }
+}
+
+/* Mobile Devices (640px and below) */
+@media (max-width: 640px) {
+  .aboutDoctorSection {
+    padding: 5rem 0 3rem 0;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .titleGradientLine {
+    width: 250px;
+  }
+
+  .doctorImage {
+    width: 300px;
+    height: 400px;
+  }
+
+  .doctorDetails {
+    padding: 1.5rem;
+  }
+
+  .doctorName {
+    font-size: 1.75rem;
+  }
+
+  .doctorDescription,
+  .doctorExtraInfo {
+    font-size: 1rem;
+  }
+
+  .qualification {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .infoCard {
+    padding: 1.5rem;
+  }
+
+  .cardHeader {
+    margin-bottom: 1.5rem;
+  }
+
+  .cardTitle {
+    font-size: 1.25rem;
+  }
+
+  .achievementItem,
+  .affiliationItem {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+  }
+
+  .specializationItem {
+    margin-bottom: 0.75rem;
+    padding: 0.6rem;
+  }
+
+  .floatingIcon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .experienceBadge {
+    width: 60px;
+    height: 60px;
+    top: -5px;
+    left: -5px;
+  }
+
+  .badgeNumber {
+    font-size: 1rem;
+  }
+
+  .badgeText {
+    font-size: 0.65rem;
+  }
+
+  .achievementBadge {
+    bottom: -5px;
+    right: -5px;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Mobile Devices (480px and below) */
+@media (max-width: 480px) {
+  .aboutDoctorSection {
+    padding: 4rem 0 2rem 0;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+
+  .titleGradientLine {
+    width: 200px;
+  }
+
+  .doctorImage {
+    width: 280px;
+    height: 350px;
+  }
+
+  .doctorName {
+    font-size: 1.5rem;
+  }
+
+  .doctorDescription,
+  .doctorExtraInfo {
+    font-size: 0.95rem;
+  }
+
+  .cardTitle {
+    font-size: 1.125rem;
+  }
+
+  /* Hide some floating icons on small screens */
+  .floatingIcon:nth-child(n + 3) {
+    display: none;
+  }
+}
+
+/* ===========================
+   DARK THEME ENHANCEMENTS
+   =========================== */
+
+[data-theme='dark'] .doctorDetails,
+[data-theme='dark'] .infoCard {
+  background: rgba(30, 41, 59, 0.8);
+  border-color: rgba(51, 65, 85, 0.6);
+}
+
+[data-theme='dark'] .achievementItem,
+[data-theme='dark'] .specializationItem,
+[data-theme='dark'] .affiliationItem {
+  background: rgba(51, 65, 85, 0.4);
+  border-color: rgba(71, 85, 105, 0.4);
+}
+
+[data-theme='dark'] .achievementItem:hover,
+[data-theme='dark'] .specializationItem:hover,
+[data-theme='dark'] .affiliationItem:hover {
+  background: rgba(71, 85, 105, 0.6);
+}
+
+[data-theme='dark'] .floatingIcon {
+  background: rgba(30, 41, 59, 0.8);
+  border-color: rgba(51, 65, 85, 0.6);
+}
+
+/* ===========================
+   ANIMATION ENHANCEMENTS
+   =========================== */
+
+/* Prevent flickering during animations */
+.doctorImageWrapper,
+.floatingIcon,
+.experienceBadge,
+.achievementBadge,
+.infoCard {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+}
+
+/* Smooth transitions for better performance */
+.achievementItem,
+.specializationItem,
+.affiliationItem {
+  transform-origin: center center;
+}
+
+/* Accessibility Improvements */
+.infoCard:focus-visible {
+  outline: 2px solid var(--medical-green);
+  outline-offset: 4px;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .floatingIcon,
+  .imageGlow,
+  .experienceBadge,
+  .achievementBadge,
+  .hoverEffect {
+    animation: none;
+    transition: none;
+  }
+
+  .infoCard:hover,
+  .achievementItem:hover,
+  .specializationItem:hover,
+  .affiliationItem:hover {
+    transform: none;
+  }
+
+  .doctorImageWrapper:hover {
+    transform: none;
+  }
+}
+
+/* ===========================
+   PRINT STYLES
+   =========================== */
+
+@media print {
+  .aboutDoctorSection {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .topSection {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .bottomSection {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .floatingIcon,
+  .imageGlow,
+  .experienceBadge,
+  .achievementBadge,
+  .hoverEffect {
+    display: none;
+  }
+
+  .doctorImage {
+    width: 300px;
+    height: 350px;
+  }
+
+  .doctorDetails,
+  .infoCard {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+}

@@ -1,0 +1,835 @@
+/* ===========================
+   EDUCATION & QUALIFICATIONS SECTION
+   =========================== */
+
+.educationSection {
+  padding: 6rem 0;
+  background: var(--background);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Decorations */
+.backgroundDecoration {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.06;
+  filter: blur(100px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.leftDecoration {
+  top: 20%;
+  left: -20%;
+  width: 500px;
+  height: 500px;
+  background: var(--accent-gradient);
+}
+
+.rightDecoration {
+  bottom: 20%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: var(--secondary-gradient);
+  filter: blur(120px);
+}
+
+/* Container */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* ===========================
+   SECTION HEADER
+   =========================== */
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.sectionBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  background: rgba(124, 58, 237, 0.1);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  border-radius: 50px;
+  color: var(--medical-purple);
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.sectionTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-primary);
+  margin: 0 0 1.5rem 0;
+  line-height: 1.2;
+}
+
+.highlightText {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.titleGradientLine {
+  height: 4px;
+  width: 400px;
+  border-radius: 2px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, #7c3aed 0%, #a855f7 50%, #059669 100%);
+  transform-origin: left center;
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.4);
+}
+
+.titleGradientLine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  animation: flowLeft 2s infinite;
+  animation-delay: 1.5s;
+}
+
+@keyframes flowLeft {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* ===========================
+   CARDS SECTION
+   =========================== */
+
+.cardsSection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+/* Base Card Styles */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 32px var(--shadow-light);
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  min-height: 500px; /* Back to original height */
+}
+
+/* Card Header */
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.cardIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-gradient);
+  color: white;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Card Content */
+.cardContent {
+  position: relative;
+  z-index: 2;
+  height: calc(100% - 120px);
+  overflow-y: auto;
+  /* Hide scrollbar for webkit browsers */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+/* Hide scrollbar for webkit browsers */
+.cardContent::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===========================
+   EDUCATION CARD
+   =========================== */
+
+.educationCard .cardIcon {
+  background: var(--primary-gradient);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.educationItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1.25rem; /* Reduced from 2rem to 1.25rem */
+  padding: 1.25rem; /* Reduced from 1.5rem to 1.25rem */
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.educationItem:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.15);
+}
+
+.timelineDot {
+  width: 36px; /* Reduced from 40px to 36px */
+  height: 36px; /* Reduced from 40px to 36px */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-top: 0.25rem;
+}
+
+.educationDetails {
+  flex: 1;
+}
+
+.degreeTitle {
+  font-size: 1rem; /* Reduced from 1.125rem to 1rem */
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.4rem 0; /* Reduced from 0.5rem to 0.4rem */
+  font-family: 'Poppins', sans-serif;
+}
+
+.institution {
+  font-size: 0.9rem; /* Reduced from 1rem to 0.9rem */
+  color: var(--text-secondary);
+  margin: 0 0 0.6rem 0; /* Reduced from 0.75rem to 0.6rem */
+  line-height: 1.4;
+}
+
+.metadata {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.4rem; /* Reduced from 0.5rem to 0.4rem */
+}
+
+.location,
+.year {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.grade {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--medical-green);
+}
+
+/* ===========================
+   CERTIFICATIONS CARD
+   =========================== */
+
+.certificationsCard .cardIcon {
+  background: var(--secondary-gradient);
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+}
+
+.certificationItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1.25rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.certificationItem:hover {
+  transform: translateX(5px);
+  box-shadow: 0 6px 20px rgba(14, 165, 233, 0.15);
+}
+
+.certIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.certDetails {
+  flex: 1;
+}
+
+.certTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.25rem 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.organization {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0 0 0.5rem 0;
+  line-height: 1.4;
+}
+
+.certMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.certYear {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.status {
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status.active {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--medical-green);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.status.renewed {
+  background: rgba(14, 165, 233, 0.1);
+  color: var(--medical-blue);
+  border: 1px solid rgba(14, 165, 233, 0.2);
+}
+
+.status.lifetime {
+  background: rgba(234, 88, 12, 0.1);
+  color: var(--medical-orange);
+  border: 1px solid rgba(234, 88, 12, 0.2);
+}
+
+/* ===========================
+   TRAINING CARD
+   =========================== */
+
+.trainingCard .cardIcon {
+  background: var(--accent-gradient);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+}
+
+.trainingItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1.25rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.trainingItem:hover {
+  transform: translateX(5px);
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.15);
+}
+
+.trainingIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.trainingDetails {
+  flex: 1;
+}
+
+.trainingTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.25rem 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.trainingInstitution {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0 0 0.5rem 0;
+  line-height: 1.4;
+}
+
+.trainingMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.duration {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.type {
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.type.fellowship {
+  background: rgba(124, 58, 237, 0.1);
+  color: var(--medical-purple);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+}
+
+.type.residency {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--medical-green);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.type.specialization {
+  background: rgba(14, 165, 233, 0.1);
+  color: var(--medical-blue);
+  border: 1px solid rgba(14, 165, 233, 0.2);
+}
+
+/* ===========================
+   HOVER EFFECTS FOR CARDS
+   =========================== */
+
+.hoverEffect {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  border-radius: 0 0 20px 20px;
+  transition: height 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 1;
+  opacity: 0.3;
+}
+
+/* Education Card Hover */
+.educationCard .hoverEffect {
+  background: linear-gradient(
+    to top,
+    #059669 0%,
+    #10b981 30%,
+    rgba(16, 185, 129, 0.6) 70%,
+    rgba(16, 185, 129, 0.2) 100%
+  );
+}
+
+.educationCard:hover .hoverEffect {
+  height: 100%;
+  border-radius: 20px;
+  opacity: 0.4;
+}
+
+.educationCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(16, 185, 129, 0.3);
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+/* Certifications Card Hover */
+.certificationsCard .hoverEffect {
+  background: linear-gradient(
+    to top,
+    #0369a1 0%,
+    #0ea5e9 30%,
+    rgba(14, 165, 233, 0.6) 70%,
+    rgba(14, 165, 233, 0.2) 100%
+  );
+}
+
+.certificationsCard:hover .hoverEffect {
+  height: 100%;
+  border-radius: 20px;
+  opacity: 0.4;
+}
+
+.certificationsCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(14, 165, 233, 0.3);
+  border-color: rgba(14, 165, 233, 0.4);
+}
+
+/* Training Card Hover */
+.trainingCard .hoverEffect {
+  background: linear-gradient(
+    to top,
+    #7c3aed 0%,
+    #a855f7 30%,
+    rgba(168, 85, 247, 0.6) 70%,
+    rgba(168, 85, 247, 0.2) 100%
+  );
+}
+
+.trainingCard:hover .hoverEffect {
+  height: 100%;
+  border-radius: 20px;
+  opacity: 0.4;
+}
+
+.trainingCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(168, 85, 247, 0.3);
+  border-color: rgba(168, 85, 247, 0.4);
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+   =========================== */
+
+/* Large Desktops (1200px and above) */
+@media (min-width: 1200px) {
+  .cardsSection {
+    gap: 3rem;
+  }
+}
+
+/* Laptops (1024px and below) */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 3rem;
+  }
+
+  .titleGradientLine {
+    width: 350px;
+  }
+
+  .cardsSection {
+    gap: 2rem;
+  }
+
+  .card {
+    padding: 2rem;
+    min-height: 450px; /* Back to original responsive height */
+  }
+
+  .cardContent {
+    height: calc(100% - 100px);
+  }
+}
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+  .educationSection {
+    padding: 4rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .sectionHeader {
+    margin-bottom: 3rem;
+  }
+
+  .sectionTitle {
+    font-size: 2.5rem;
+  }
+
+  .titleGradientLine {
+    width: 300px;
+  }
+
+  .cardsSection {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .card {
+    padding: 2rem;
+    min-height: auto;
+  }
+
+  .cardContent {
+    height: auto;
+  }
+
+  .educationItem {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .timelineDot {
+    align-self: center;
+  }
+
+  .metadata {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+/* Mobile Devices (640px and below) */
+@media (max-width: 640px) {
+  .educationSection {
+    padding: 3rem 0;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .titleGradientLine {
+    width: 250px;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  .cardHeader {
+    margin-bottom: 2rem;
+  }
+
+  .cardTitle {
+    font-size: 1.25rem;
+  }
+
+  .educationItem,
+  .certificationItem,
+  .trainingItem {
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .degreeTitle,
+  .certTitle,
+  .trainingTitle {
+    font-size: 1rem;
+  }
+
+  .institution,
+  .organization,
+  .trainingInstitution {
+    font-size: 0.8rem;
+  }
+
+  .timelineDot,
+  .certIcon,
+  .trainingIcon {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* Mobile Devices (480px and below) */
+@media (max-width: 480px) {
+  .educationSection {
+    padding: 2rem 0;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+
+  .titleGradientLine {
+    width: 200px;
+  }
+
+  .cardTitle {
+    font-size: 1.125rem;
+  }
+
+  .cardIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .educationItem {
+    gap: 0.75rem;
+  }
+
+  .metadata {
+    gap: 0.5rem;
+  }
+
+  .location,
+  .year,
+  .duration {
+    font-size: 0.75rem;
+  }
+
+  .status,
+  .type {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.4rem;
+  }
+}
+
+/* ===========================
+   DARK THEME ENHANCEMENTS
+   =========================== */
+
+[data-theme='dark'] .card {
+  background: rgba(30, 41, 59, 0.8);
+  border-color: rgba(51, 65, 85, 0.6);
+}
+
+[data-theme='dark'] .educationItem,
+[data-theme='dark'] .certificationItem,
+[data-theme='dark'] .trainingItem {
+  background: rgba(51, 65, 85, 0.4);
+  border-color: rgba(71, 85, 105, 0.4);
+}
+
+[data-theme='dark'] .educationItem:hover,
+[data-theme='dark'] .certificationItem:hover,
+[data-theme='dark'] .trainingItem:hover {
+  background: rgba(71, 85, 105, 0.6);
+}
+
+/* ===========================
+   ANIMATION ENHANCEMENTS
+   =========================== */
+
+.card,
+.educationItem,
+.certificationItem,
+.trainingItem {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+}
+
+/* Accessibility Improvements */
+.card:focus-visible {
+  outline: 2px solid var(--medical-green);
+  outline-offset: 4px;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .hoverEffect {
+    animation: none;
+    transition: none;
+  }
+
+  .card:hover,
+  .educationItem:hover,
+  .certificationItem:hover,
+  .trainingItem:hover {
+    transform: none;
+  }
+}
+
+/* ===========================
+   PRINT STYLES
+   =========================== */
+
+@media print {
+  .educationSection {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .cardsSection {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .hoverEffect {
+    display: none;
+  }
+
+  .card {
+    box-shadow: none;
+    border: 1px solid #ccc;
+    break-inside: avoid;
+  }
+
+  .cardContent {
+    height: auto;
+    overflow: visible;
+  }
+}

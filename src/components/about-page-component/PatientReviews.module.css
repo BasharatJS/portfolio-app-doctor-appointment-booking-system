@@ -1,0 +1,1054 @@
+/* ===========================
+   PATIENT REVIEWS SECTION
+   =========================== */
+
+.reviewsSection {
+  padding: 6rem 0;
+  background: var(--background);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Decorations */
+.backgroundDecoration {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.06;
+  filter: blur(100px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.leftDecoration {
+  top: 15%;
+  left: -25%;
+  width: 600px;
+  height: 600px;
+  background: var(--secondary-gradient);
+}
+
+.rightDecoration {
+  bottom: 15%;
+  right: -25%;
+  width: 700px;
+  height: 700px;
+  background: var(--primary-gradient);
+  filter: blur(140px);
+}
+
+/* Container */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* ===========================
+   SECTION HEADER
+   =========================== */
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.sectionBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  background: rgba(14, 165, 233, 0.1);
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  border-radius: 50px;
+  color: var(--medical-blue);
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.sectionTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-primary);
+  margin: 0 0 1.5rem 0;
+  line-height: 1.2;
+}
+
+.highlightText {
+  background: var(--secondary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.titleGradientLine {
+  height: 4px;
+  width: 400px;
+  border-radius: 2px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, #0ea5e9 0%, #3b82f6 50%, #059669 100%);
+  transform-origin: left center;
+  box-shadow: 0 2px 8px rgba(14, 165, 233, 0.4);
+}
+
+.titleGradientLine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  animation: flowLeft 2s infinite;
+  animation-delay: 1.5s;
+}
+
+@keyframes flowLeft {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* ===========================
+   CARDS SECTION
+   =========================== */
+
+.cardsSection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+/* Base Card Styles */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 32px var(--shadow-light);
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  min-height: 650px; /* Increased height to accommodate content */
+}
+
+/* Card Header */
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.cardIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-gradient);
+  color: white;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Card Content */
+.cardContent {
+  position: relative;
+  z-index: 2;
+  height: auto; /* Changed from calc(100% - 120px) to auto */
+  overflow: visible; /* Changed from auto to visible */
+  /* Hide scrollbar for webkit browsers */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+/* Hide scrollbar for webkit browsers */
+.cardContent::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===========================
+   RATING CARD
+   =========================== */
+
+.ratingCard .cardIcon {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
+}
+
+.overallRating {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem; /* Reduced from 2.5rem to 2rem */
+  padding: 1.5rem; /* Reduced from 2rem to 1.5rem */
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+
+.ratingNumber {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #fbbf24;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1;
+}
+
+.ratingInfo {
+  flex: 1;
+}
+
+.stars {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.star {
+  transition: all 0.2s ease;
+}
+
+.star.filled {
+  color: #fbbf24;
+}
+
+.star.empty {
+  color: #e5e7eb;
+}
+
+.totalReviews {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.ratingBreakdown {
+  space-y: 0.75rem;
+}
+
+.ratingRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem; /* Reduced from 0.75rem to 0.5rem */
+}
+
+.starCount {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  width: 12px;
+}
+
+.starIcon {
+  color: #fbbf24;
+  flex-shrink: 0;
+}
+
+.progressBar {
+  flex: 1;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #fbbf24 0%, #f59e0b 100%);
+  border-radius: 4px;
+  transition: width 1s ease;
+}
+
+.count {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  width: 40px;
+  text-align: right;
+}
+
+/* ===========================
+   RATING SUMMARY
+   =========================== */
+
+.ratingSummary {
+  margin-top: 1rem; /* Reduced from 1.5rem to 1rem */
+  padding: 1.25rem; /* Reduced from 1.5rem to 1.25rem */
+  background: linear-gradient(
+    135deg,
+    rgba(251, 191, 36, 0.1) 0%,
+    rgba(245, 158, 11, 0.05) 100%
+  );
+  border: 1px solid rgba(251, 191, 36, 0.2);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+
+.summaryContent {
+  text-align: center;
+}
+
+.summaryStats {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 0.75rem; /* Reduced from 1rem to 0.75rem */
+}
+
+.summaryItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #f59e0b;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.summaryIcon {
+  color: #fbbf24;
+}
+
+.summaryNote {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0;
+  font-style: italic;
+}
+
+/* ===========================
+   STATISTICS CARD
+   =========================== */
+
+.statsCard .cardIcon {
+  background: var(--secondary-gradient);
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem; /* Reduced from 2rem to 1.5rem */
+  padding: 1.25rem; /* Reduced from 1.5rem to 1.25rem */
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.statItem:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.15);
+}
+
+.statIcon {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.statDetails {
+  flex: 1;
+}
+
+.statValue {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  font-family: 'Poppins', sans-serif;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.statLabel {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.statDescription {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* ===========================
+   REVIEWS CARD
+   =========================== */
+
+.reviewsCard .cardIcon {
+  background: var(--accent-gradient);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+}
+
+.reviewItem {
+  margin-bottom: 1.5rem; /* Reduced from 2rem to 1.5rem */
+  padding: 1.25rem; /* Reduced from 1.5rem to 1.25rem */
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.reviewItem:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.15);
+}
+
+.reviewHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.patientInfo {
+  flex: 1;
+}
+
+.patientName {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.verifiedIcon {
+  color: var(--medical-green);
+}
+
+.patientDetails {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.reviewRating {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.reviewText {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+  font-style: italic;
+}
+
+.reviewFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.reviewDate,
+.helpful {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* ===========================
+   GOOGLE REVIEW LINK
+   =========================== */
+
+.googleReviewLink {
+  margin-top: 0.75rem; /* Reduced from 1rem to 0.75rem */
+  padding: 1.25rem; /* Reduced from 1.5rem to 1.25rem */
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.googleReviewLink:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(66, 133, 244, 0.15);
+}
+
+.googleReviewContent {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.googleIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.googleReviewText {
+  flex: 1;
+}
+
+.googleReviewText h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.25rem 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.googleReviewText p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0 0 0.75rem 0;
+  line-height: 1.4;
+}
+
+.googleReviewButton {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+  color: white;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(66, 133, 244, 0.3);
+}
+
+.googleReviewButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(66, 133, 244, 0.4);
+}
+
+/* ===========================
+   HOVER EFFECTS FOR CARDS
+   =========================== */
+
+.hoverEffect {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  border-radius: 0 0 20px 20px;
+  transition: height 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 1;
+  opacity: 0.3;
+}
+
+/* Rating Card Hover */
+.ratingCard .hoverEffect {
+  background: linear-gradient(
+    to top,
+    #f59e0b 0%,
+    #fbbf24 30%,
+    rgba(251, 191, 36, 0.6) 70%,
+    rgba(251, 191, 36, 0.2) 100%
+  );
+}
+
+.ratingCard:hover .hoverEffect {
+  height: 100%;
+  border-radius: 20px;
+  opacity: 0.4;
+}
+
+.ratingCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(251, 191, 36, 0.3);
+  border-color: rgba(251, 191, 36, 0.4);
+}
+
+/* Statistics Card Hover */
+.statsCard .hoverEffect {
+  background: linear-gradient(
+    to top,
+    #0369a1 0%,
+    #0ea5e9 30%,
+    rgba(14, 165, 233, 0.6) 70%,
+    rgba(14, 165, 233, 0.2) 100%
+  );
+}
+
+.statsCard:hover .hoverEffect {
+  height: 100%;
+  border-radius: 20px;
+  opacity: 0.4;
+}
+
+.statsCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(14, 165, 233, 0.3);
+  border-color: rgba(14, 165, 233, 0.4);
+}
+
+/* Reviews Card Hover */
+.reviewsCard .hoverEffect {
+  background: linear-gradient(
+    to top,
+    #7c3aed 0%,
+    #a855f7 30%,
+    rgba(168, 85, 247, 0.6) 70%,
+    rgba(168, 85, 247, 0.2) 100%
+  );
+}
+
+.reviewsCard:hover .hoverEffect {
+  height: 100%;
+  border-radius: 20px;
+  opacity: 0.4;
+}
+
+.reviewsCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(168, 85, 247, 0.3);
+  border-color: rgba(168, 85, 247, 0.4);
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+   =========================== */
+
+/* Large Desktops (1200px and above) */
+@media (min-width: 1200px) {
+  .cardsSection {
+    gap: 3rem;
+  }
+
+  .overallRating {
+    gap: 2.5rem;
+  }
+
+  .ratingNumber {
+    font-size: 4.5rem;
+  }
+}
+
+/* Laptops (1024px and below) */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 3rem;
+  }
+
+  .titleGradientLine {
+    width: 350px;
+  }
+
+  .cardsSection {
+    gap: 2rem;
+  }
+
+  .card {
+    padding: 2rem;
+    min-height: 600px; /* Increased for laptop screens */
+  }
+
+  .cardContent {
+    height: auto; /* Changed to auto for laptop screens */
+  }
+
+  .ratingNumber {
+    font-size: 3.5rem;
+  }
+
+  .overallRating {
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+}
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+  .reviewsSection {
+    padding: 4rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .sectionHeader {
+    margin-bottom: 3rem;
+  }
+
+  .sectionTitle {
+    font-size: 2.5rem;
+  }
+
+  .titleGradientLine {
+    width: 300px;
+  }
+
+  .cardsSection {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .card {
+    padding: 2rem;
+    min-height: auto;
+  }
+
+  .cardContent {
+    height: auto;
+  }
+
+  .overallRating {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .ratingNumber {
+    font-size: 3rem;
+  }
+
+  .statItem {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .statIcon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .statValue {
+    font-size: 1.75rem;
+  }
+
+  .reviewHeader {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .googleReviewContent {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .summaryStats {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+/* Mobile Devices (640px and below) */
+@media (max-width: 640px) {
+  .reviewsSection {
+    padding: 3rem 0;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .titleGradientLine {
+    width: 250px;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  .cardHeader {
+    margin-bottom: 2rem;
+  }
+
+  .cardTitle {
+    font-size: 1.25rem;
+  }
+
+  .overallRating {
+    padding: 1.25rem;
+  }
+
+  .ratingNumber {
+    font-size: 2.5rem;
+  }
+
+  .statItem,
+  .reviewItem {
+    margin-bottom: 1.5rem;
+    padding: 1.25rem;
+  }
+
+  .statValue {
+    font-size: 1.5rem;
+  }
+
+  .reviewFooter {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .googleReviewLink {
+    padding: 1.25rem;
+  }
+
+  .ratingSummary {
+    padding: 1.25rem;
+  }
+}
+
+/* Mobile Devices (480px and below) */
+@media (max-width: 480px) {
+  .reviewsSection {
+    padding: 2rem 0;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+
+  .titleGradientLine {
+    width: 200px;
+  }
+
+  .cardTitle {
+    font-size: 1.125rem;
+  }
+
+  .cardIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .ratingNumber {
+    font-size: 2rem;
+  }
+
+  .statIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .statValue {
+    font-size: 1.25rem;
+  }
+
+  .statLabel {
+    font-size: 0.9rem;
+  }
+
+  .statDescription {
+    font-size: 0.8rem;
+  }
+
+  .patientName {
+    font-size: 0.9rem;
+  }
+
+  .patientDetails {
+    font-size: 0.8rem;
+  }
+
+  .reviewText {
+    font-size: 0.85rem;
+  }
+
+  .reviewDate,
+  .helpful {
+    font-size: 0.75rem;
+  }
+
+  .googleIcon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .googleReviewText h4 {
+    font-size: 0.9rem;
+  }
+
+  .googleReviewText p {
+    font-size: 0.8rem;
+  }
+
+  .googleReviewButton {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .summaryItem {
+    font-size: 0.8rem;
+  }
+
+  .summaryNote {
+    font-size: 0.75rem;
+  }
+}
+
+/* ===========================
+   DARK THEME ENHANCEMENTS
+   =========================== */
+
+[data-theme='dark'] .card {
+  background: rgba(30, 41, 59, 0.8);
+  border-color: rgba(51, 65, 85, 0.6);
+}
+
+[data-theme='dark'] .overallRating,
+[data-theme='dark'] .statItem,
+[data-theme='dark'] .reviewItem,
+[data-theme='dark'] .googleReviewLink,
+[data-theme='dark'] .ratingSummary {
+  background: rgba(51, 65, 85, 0.4);
+  border-color: rgba(71, 85, 105, 0.4);
+}
+
+[data-theme='dark'] .overallRating:hover,
+[data-theme='dark'] .statItem:hover,
+[data-theme='dark'] .reviewItem:hover,
+[data-theme='dark'] .googleReviewLink:hover {
+  background: rgba(71, 85, 105, 0.6);
+}
+
+[data-theme='dark'] .progressBar {
+  background: rgba(71, 85, 105, 0.6);
+}
+
+[data-theme='dark'] .star.empty {
+  color: rgba(71, 85, 105, 0.8);
+}
+
+[data-theme='dark'] .googleIcon {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* ===========================
+   ANIMATION ENHANCEMENTS
+   =========================== */
+
+.card,
+.overallRating,
+.statItem,
+.reviewItem,
+.googleReviewLink,
+.ratingSummary {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+}
+
+/* Accessibility Improvements */
+.card:focus-visible,
+.googleReviewButton:focus-visible {
+  outline: 2px solid var(--medical-blue);
+  outline-offset: 4px;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .hoverEffect,
+  .progressFill {
+    animation: none;
+    transition: none;
+  }
+
+  .card:hover,
+  .statItem:hover,
+  .reviewItem:hover,
+  .googleReviewLink:hover,
+  .googleReviewButton:hover {
+    transform: none;
+  }
+}
+
+/* ===========================
+   PRINT STYLES
+   =========================== */
+
+@media print {
+  .reviewsSection {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .cardsSection {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .hoverEffect {
+    display: none;
+  }
+
+  .card {
+    box-shadow: none;
+    border: 1px solid #ccc;
+    break-inside: avoid;
+  }
+
+  .cardContent {
+    height: auto;
+    overflow: visible;
+  }
+
+  .overallRating {
+    flex-direction: row;
+  }
+
+  .statItem {
+    flex-direction: row;
+  }
+
+  .googleReviewButton {
+    display: none;
+  }
+}
