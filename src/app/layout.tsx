@@ -28,9 +28,9 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'Afroz Pediatrics - Compassionate Pediatric Care',
+  title: 'Dr. Satya Pediatrics - Compassionate Pediatric Care',
   description:
-    'Professional pediatric care with Dr. Afroz. Comprehensive medical services for children with online appointment booking, consultation, and healthcare management.',
+    'Professional pediatric care with Dr. Satya. Comprehensive medical services for children with online appointment booking, consultation, and healthcare management.',
   keywords: [
     'pediatrics',
     'child healthcare',
@@ -38,32 +38,32 @@ export const metadata: Metadata = {
     'pediatrician',
     'medical consultation',
     'healthcare portfolio',
-    'Afroz Pediatrics',
+    'Dr. Satya Pediatrics',
   ],
-  authors: [{ name: 'Dr. Afroz' }],
-  creator: 'Afroz Pediatrics',
-  publisher: 'Afroz Pediatrics',
+  authors: [{ name: 'Dr. Satya' }],
+  creator: 'Dr. Satya Pediatrics',
+  publisher: 'Dr. Satya Pediatrics',
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://afroz-pediatrics.com'),
+  metadataBase: new URL('https://dr-satya-pediatrics.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Afroz Pediatrics - Compassionate Pediatric Care',
+    title: 'Dr. Satya Pediatrics - Compassionate Pediatric Care',
     description:
-      'Professional pediatric care with Dr. Afroz. Comprehensive medical services for children.',
-    url: 'https://afroz-pediatrics.com',
-    siteName: 'Afroz Pediatrics',
+      'Professional pediatric care with Dr. Satya. Comprehensive medical services for children.',
+    url: 'https://dr-satya-pediatrics.com',
+    siteName: 'Dr. Satya Pediatrics',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Afroz Pediatrics - Professional Healthcare',
+        alt: 'Dr. Satya Pediatrics - Professional Healthcare',
       },
     ],
     locale: 'en_US',
@@ -71,11 +71,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Afroz Pediatrics - Compassionate Pediatric Care',
+    title: 'Dr. Satya Pediatrics - Compassionate Pediatric Care',
     description:
       'Professional pediatric care with comprehensive medical services for children.',
     images: ['/og-image.jpg'],
-    creator: '@afroz_pediatrics',
+    creator: '@dr_satya_pediatrics',
   },
   robots: {
     index: true,

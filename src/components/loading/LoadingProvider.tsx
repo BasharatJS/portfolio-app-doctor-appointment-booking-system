@@ -76,7 +76,7 @@ const LoadingProvider: React.FC<LoadingProviderProps> = ({ children }) => {
 
         {/* Title with proper gap */}
         <h1 className={styles.title}>
-          <span className={styles.titleAfroz}>Afroz</span>
+          <span className={styles.titleAfroz}>Dr. Satya</span>
           <span className={styles.titlePediatrics}>Pediatrics</span>
         </h1>
 

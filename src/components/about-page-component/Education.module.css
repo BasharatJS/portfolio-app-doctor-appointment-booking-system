@@ -80,7 +80,7 @@
 }
 
 .highlightText {
-  background: var(--accent-gradient);
+  background: var(--primary-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -93,7 +93,7 @@
   margin: 0 auto;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(90deg, #7c3aed 0%, #a855f7 50%, #059669 100%);
+  background: linear-gradient(90deg, #7c3aed 0%, #a855f7 50%, #c084fc 100%);
   transform-origin: left center;
   box-shadow: 0 2px 8px rgba(124, 58, 237, 0.4);
 }
@@ -166,7 +166,7 @@
   justify-content: center;
   background: var(--primary-gradient);
   color: white;
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
 }
 
 .cardTitle {
@@ -181,16 +181,8 @@
 .cardContent {
   position: relative;
   z-index: 2;
-  height: calc(100% - 120px);
-  overflow-y: auto;
-  /* Hide scrollbar for webkit browsers */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-}
-
-/* Hide scrollbar for webkit browsers */
-.cardContent::-webkit-scrollbar {
-  display: none;
+  height: auto;
+  overflow: visible;
 }
 
 /* ===========================
@@ -199,7 +191,7 @@
 
 .educationCard .cardIcon {
   background: var(--primary-gradient);
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
 }
 
 .educationItem {
@@ -208,8 +200,8 @@
   gap: 1.5rem;
   margin-bottom: 1.25rem; /* Reduced from 2rem to 1.25rem */
   padding: 1.25rem; /* Reduced from 1.5rem to 1.25rem */
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
+  background: rgba(124, 58, 237, 0.05);
+  border: 1px solid rgba(124, 58, 237, 0.1);
   border-radius: 16px;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
@@ -218,7 +210,7 @@
 
 .educationItem:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.15);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.15);
 }
 
 .timelineDot {
@@ -270,12 +262,12 @@
 .grade {
   display: inline-block;
   padding: 0.25rem 0.75rem;
-  background: rgba(16, 185, 129, 0.1);
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  background: rgba(124, 58, 237, 0.1);
+  border: 1px solid rgba(124, 58, 237, 0.2);
   border-radius: 20px;
   font-size: 0.75rem;
   font-weight: 600;
-  color: var(--medical-green);
+  color: var(--medical-purple);
 }
 
 /* ===========================
@@ -284,7 +276,7 @@
 
 .certificationsCard .cardIcon {
   background: var(--secondary-gradient);
-  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
 .certificationItem {
@@ -293,8 +285,8 @@
   gap: 1rem;
   margin-bottom: 1.5rem;
   padding: 1.25rem;
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
+  background: rgba(124, 58, 237, 0.05);
+  border: 1px solid rgba(124, 58, 237, 0.1);
   border-radius: 12px;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
@@ -302,7 +294,7 @@
 
 .certificationItem:hover {
   transform: translateX(5px);
-  box-shadow: 0 6px 20px rgba(14, 165, 233, 0.15);
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.15);
 }
 
 .certIcon {
@@ -356,15 +348,15 @@
 }
 
 .status.active {
-  background: rgba(16, 185, 129, 0.1);
-  color: var(--medical-green);
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  background: rgba(124, 58, 237, 0.1);
+  color: var(--medical-purple);
+  border: 1px solid rgba(124, 58, 237, 0.2);
 }
 
 .status.renewed {
-  background: rgba(14, 165, 233, 0.1);
+  background: rgba(99, 102, 241, 0.1);
   color: var(--medical-blue);
-  border: 1px solid rgba(14, 165, 233, 0.2);
+  border: 1px solid rgba(99, 102, 241, 0.2);
 }
 
 .status.lifetime {
@@ -379,7 +371,7 @@
 
 .trainingCard .cardIcon {
   background: var(--accent-gradient);
-  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+  box-shadow: 0 4px 12px rgba(192, 132, 252, 0.3);
 }
 
 .trainingItem {
@@ -388,8 +380,8 @@
   gap: 1rem;
   margin-bottom: 1.5rem;
   padding: 1.25rem;
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
+  background: rgba(124, 58, 237, 0.05);
+  border: 1px solid rgba(124, 58, 237, 0.1);
   border-radius: 12px;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
@@ -460,19 +452,19 @@
 }
 
 .type.residency {
-  background: rgba(16, 185, 129, 0.1);
-  color: var(--medical-green);
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  background: rgba(124, 58, 237, 0.1);
+  color: var(--medical-purple);
+  border: 1px solid rgba(124, 58, 237, 0.2);
 }
 
 .type.specialization {
-  background: rgba(14, 165, 233, 0.1);
+  background: rgba(99, 102, 241, 0.1);
   color: var(--medical-blue);
-  border: 1px solid rgba(14, 165, 233, 0.2);
+  border: 1px solid rgba(99, 102, 241, 0.2);
 }
 
 /* ===========================
-   HOVER EFFECTS FOR CARDS
+   HOVER EFFECTS FOR CARDS - CONSISTENT PURPLE
    =========================== */
 
 .hoverEffect {
@@ -487,73 +479,33 @@
   opacity: 0.3;
 }
 
-/* Education Card Hover */
-.educationCard .hoverEffect {
-  background: linear-gradient(
-    to top,
-    #059669 0%,
-    #10b981 30%,
-    rgba(16, 185, 129, 0.6) 70%,
-    rgba(16, 185, 129, 0.2) 100%
-  );
-}
-
-.educationCard:hover .hoverEffect {
-  height: 100%;
-  border-radius: 20px;
-  opacity: 0.4;
-}
-
-.educationCard:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(16, 185, 129, 0.3);
-  border-color: rgba(16, 185, 129, 0.4);
-}
-
-/* Certifications Card Hover */
-.certificationsCard .hoverEffect {
-  background: linear-gradient(
-    to top,
-    #0369a1 0%,
-    #0ea5e9 30%,
-    rgba(14, 165, 233, 0.6) 70%,
-    rgba(14, 165, 233, 0.2) 100%
-  );
-}
-
-.certificationsCard:hover .hoverEffect {
-  height: 100%;
-  border-radius: 20px;
-  opacity: 0.4;
-}
-
-.certificationsCard:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(14, 165, 233, 0.3);
-  border-color: rgba(14, 165, 233, 0.4);
-}
-
-/* Training Card Hover */
+/* All Cards Hover - Consistent Purple Gradient */
+.educationCard .hoverEffect,
+.certificationsCard .hoverEffect,
 .trainingCard .hoverEffect {
   background: linear-gradient(
     to top,
     #7c3aed 0%,
     #a855f7 30%,
-    rgba(168, 85, 247, 0.6) 70%,
-    rgba(168, 85, 247, 0.2) 100%
+    rgba(124, 58, 237, 0.6) 70%,
+    rgba(124, 58, 237, 0.2) 100%
   );
 }
 
+.educationCard:hover .hoverEffect,
+.certificationsCard:hover .hoverEffect,
 .trainingCard:hover .hoverEffect {
   height: 100%;
   border-radius: 20px;
   opacity: 0.4;
 }
 
+.educationCard:hover,
+.certificationsCard:hover,
 .trainingCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(168, 85, 247, 0.3);
-  border-color: rgba(168, 85, 247, 0.4);
+  box-shadow: 0 20px 60px rgba(124, 58, 237, 0.3);
+  border-color: rgba(124, 58, 237, 0.4);
 }
 
 /* ===========================
@@ -784,7 +736,7 @@
 
 /* Accessibility Improvements */
 .card:focus-visible {
-  outline: 2px solid var(--medical-green);
+  outline: 2px solid var(--medical-purple);
   outline-offset: 4px;
 }
 

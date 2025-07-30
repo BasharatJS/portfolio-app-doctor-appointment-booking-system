@@ -59,10 +59,10 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1.25rem;
-  background: rgba(234, 88, 12, 0.1);
-  border: 1px solid rgba(234, 88, 12, 0.2);
+  background: rgba(124, 58, 237, 0.1);
+  border: 1px solid rgba(124, 58, 237, 0.2);
   border-radius: 50px;
-  color: var(--medical-orange);
+  color: var(--medical-purple);
   font-size: 0.875rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
@@ -80,7 +80,7 @@
 }
 
 .highlightText {
-  background: linear-gradient(135deg, #ea580c 0%, #f97316 50%, #059669 100%);
+  background: var(--primary-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -93,9 +93,9 @@
   margin: 0 auto;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(90deg, #ea580c 0%, #f97316 50%, #059669 100%);
+  background: linear-gradient(90deg, #7c3aed 0%, #a855f7 50%, #c084fc 100%);
   transform-origin: left center;
-  box-shadow: 0 2px 8px rgba(234, 88, 12, 0.4);
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.4);
 }
 
 .titleGradientLine::before {
@@ -147,7 +147,7 @@
   overflow: hidden;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  min-height: 450px; /* Reduced from 550px to 450px */
+  min-height: 380px; /* Reduced from 450px to 380px */
 }
 
 /* Card Header */
@@ -167,7 +167,7 @@
   justify-content: center;
   background: var(--primary-gradient);
   color: white;
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
 }
 
 .cardTitle {
@@ -182,8 +182,8 @@
 .cardContent {
   position: relative;
   z-index: 2;
-  height: auto; /* Changed from calc(100% - 120px) to auto */
-  overflow: visible; /* Changed from auto to visible */
+  height: auto;
+  overflow: visible;
 }
 
 /* ===========================
@@ -191,8 +191,8 @@
    =========================== */
 
 .philosophyCard .cardIcon {
-  background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
-  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
+  background: var(--primary-gradient);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
 }
 
 .principlesList {
@@ -215,17 +215,17 @@
 }
 
 .listTitle svg {
-  color: var(--medical-orange);
+  color: var(--medical-purple);
 }
 
 .principleItem {
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
-  margin-bottom: 0.75rem; /* Reduced from 1rem to 0.75rem */
-  padding: 0.6rem; /* Reduced from 0.75rem to 0.6rem */
-  background: rgba(234, 88, 12, 0.05);
-  border: 1px solid rgba(234, 88, 12, 0.1);
+  margin-bottom: 0.75rem;
+  padding: 0.9rem;
+  background: rgba(124, 58, 237, 0.05);
+  border: 1px solid rgba(124, 58, 237, 0.1);
   border-radius: 10px;
   transition: all 0.3s ease;
   font-weight: 500;
@@ -235,11 +235,11 @@
 
 .principleItem:hover {
   transform: translateX(5px);
-  background: rgba(234, 88, 12, 0.1);
+  background: rgba(124, 58, 237, 0.1);
 }
 
 .checkIcon {
-  color: var(--medical-orange);
+  color: var(--medical-purple);
   flex-shrink: 0;
   margin-top: 0.125rem;
 }
@@ -250,22 +250,24 @@
 
 .approachesCard .cardIcon {
   background: var(--secondary-gradient);
-  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
 .approachItem {
-  margin-bottom: 1.5rem; /* Reduced from 2rem to 1.5rem */
-  padding: 1.25rem; /* Reduced from 1.5rem to 1.25rem */
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
+  margin-bottom: 1.5rem;
+  padding: 1.35rem;
+  /* background: var(--glass-bg);
+  border: 1px solid var(--glass-border); */
   border-radius: 16px;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
+  background: rgba(124, 58, 237, 0.05);
+  border: 1px solid rgba(124, 58, 237, 0.1);
 }
 
 .approachItem:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.15);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.15);
 }
 
 .approachHeader {
@@ -333,17 +335,19 @@
 
 .valuesCard .cardIcon {
   background: var(--accent-gradient);
-  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+  box-shadow: 0 4px 12px rgba(192, 132, 252, 0.3);
 }
 
 .valueItem {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  margin-bottom: 1.5rem; /* Reduced from 2rem to 1.5rem */
-  padding: 1.25rem; /* Reduced from 1.5rem to 1.25rem */
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
+  margin-bottom: 1.25rem;
+  padding: 1.25rem;
+  /* background: var(--glass-bg);
+  border: 1px solid var(--glass-border); */
+  background: rgba(124, 58, 237, 0.05);
+  border: 1px solid rgba(124, 58, 237, 0.1);
   border-radius: 16px;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
@@ -411,6 +415,9 @@
   backdrop-filter: blur(20px);
   box-shadow: 0 12px 40px var(--shadow-light);
   position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .quote::before {
@@ -420,8 +427,48 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #ea580c 0%, #f97316 50%, #059669 100%);
+  background: linear-gradient(90deg, #7c3aed 0%, #a855f7 50%, #c084fc 100%);
   border-radius: 24px 24px 0 0;
+}
+
+/* Quote Hover Effect - Left to Right */
+.quote::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    #7c3aed 0%,
+    #a855f7 30%,
+    rgba(124, 58, 237, 0.6) 70%,
+    rgba(124, 58, 237, 0.2) 100%
+  );
+  border-radius: 24px;
+  transition: left 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 1;
+  opacity: 0.3;
+}
+
+.quote:hover::after {
+  left: 0;
+  opacity: 0.4;
+}
+
+.quote:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(124, 58, 237, 0.3);
+  border-color: rgba(124, 58, 237, 0.4);
+}
+
+/* Ensure quote content is above hover effect */
+.quoteIcon,
+.quoteText,
+.quoteAuthor {
+  position: relative;
+  z-index: 2;
 }
 
 .quoteIcon {
@@ -434,7 +481,7 @@
   justify-content: center;
   margin: 0 auto 2rem auto;
   color: white;
-  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.3);
 }
 
 .quoteText {
@@ -450,13 +497,13 @@
 .quoteAuthor {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--medical-green);
+  color: var(--medical-purple);
   font-family: 'Poppins', sans-serif;
   font-style: normal;
 }
 
 /* ===========================
-   HOVER EFFECTS FOR CARDS
+   HOVER EFFECTS FOR CARDS - CONSISTENT PURPLE
    =========================== */
 
 .hoverEffect {
@@ -471,73 +518,33 @@
   opacity: 0.3;
 }
 
-/* Philosophy Card Hover */
-.philosophyCard .hoverEffect {
-  background: linear-gradient(
-    to top,
-    #ea580c 0%,
-    #f97316 30%,
-    rgba(249, 115, 22, 0.6) 70%,
-    rgba(249, 115, 22, 0.2) 100%
-  );
-}
-
-.philosophyCard:hover .hoverEffect {
-  height: 100%;
-  border-radius: 20px;
-  opacity: 0.4;
-}
-
-.philosophyCard:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(234, 88, 12, 0.3);
-  border-color: rgba(234, 88, 12, 0.4);
-}
-
-/* Approaches Card Hover */
-.approachesCard .hoverEffect {
-  background: linear-gradient(
-    to top,
-    #0369a1 0%,
-    #0ea5e9 30%,
-    rgba(14, 165, 233, 0.6) 70%,
-    rgba(14, 165, 233, 0.2) 100%
-  );
-}
-
-.approachesCard:hover .hoverEffect {
-  height: 100%;
-  border-radius: 20px;
-  opacity: 0.4;
-}
-
-.approachesCard:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(14, 165, 233, 0.3);
-  border-color: rgba(14, 165, 233, 0.4);
-}
-
-/* Values Card Hover */
+/* All Cards Hover - Consistent Purple Gradient */
+.philosophyCard .hoverEffect,
+.approachesCard .hoverEffect,
 .valuesCard .hoverEffect {
   background: linear-gradient(
     to top,
     #7c3aed 0%,
     #a855f7 30%,
-    rgba(168, 85, 247, 0.6) 70%,
-    rgba(168, 85, 247, 0.2) 100%
+    rgba(124, 58, 237, 0.6) 70%,
+    rgba(124, 58, 237, 0.2) 100%
   );
 }
 
+.philosophyCard:hover .hoverEffect,
+.approachesCard:hover .hoverEffect,
 .valuesCard:hover .hoverEffect {
   height: 100%;
   border-radius: 20px;
   opacity: 0.4;
 }
 
+.philosophyCard:hover,
+.approachesCard:hover,
 .valuesCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(168, 85, 247, 0.3);
-  border-color: rgba(168, 85, 247, 0.4);
+  box-shadow: 0 20px 60px rgba(124, 58, 237, 0.3);
+  border-color: rgba(124, 58, 237, 0.4);
 }
 
 /* ===========================
@@ -582,9 +589,9 @@
     min-height: 400px; /* Reduced from 500px to 400px */
   }
 
-  .cardContent {
-    height: auto; /* Changed to auto */
-  }
+  /* .cardContent {
+    height: auto;
+  } */
 
   .benefitsList {
     grid-template-columns: 1fr;
@@ -630,10 +637,6 @@
   .card {
     padding: 2rem;
     min-height: auto;
-  }
-
-  .cardContent {
-    height: auto;
   }
 
   .approachHeader {
@@ -823,7 +826,7 @@
 /* Accessibility Improvements */
 .card:focus-visible,
 .quote:focus-visible {
-  outline: 2px solid var(--medical-orange);
+  outline: 2px solid var(--medical-purple);
   outline-offset: 4px;
 }
 
@@ -868,10 +871,10 @@
     break-inside: avoid;
   }
 
-  .cardContent {
+  /* .cardContent {
     height: auto;
     overflow: visible;
-  }
+  } */
 
   .quoteSection {
     margin-top: 2rem;

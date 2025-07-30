@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect, useRef } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import {
   ChevronLeft,
   ChevronRight,
@@ -41,7 +41,7 @@ const testimonialData: TestimonialData[] = [
     rating: 5,
     date: '2 days ago',
     review:
-      'Dr. Afroz is an excellent pediatrician. He is full of academic knowledge as well as with practical experience. He listens to the problem carefully and gives proper guidance. Highly recommended for child care.',
+      'Dr. Satya is an excellent pediatrician. He is full of academic knowledge as well as with practical experience. He listens to the problem carefully and gives proper guidance. Highly recommended for child care.',
     platform: 'google',
     verified: true,
     relationship: 'Mother of 3-year-old',
@@ -53,7 +53,7 @@ const testimonialData: TestimonialData[] = [
     rating: 5,
     date: '1 week ago',
     review:
-      'Outstanding doctor! My daughter was having recurring fever and Dr. Afroz diagnosed the issue quickly. His treatment approach is very systematic and child-friendly. The clinic environment is also very welcoming.',
+      'Outstanding doctor! My daughter was having recurring fever and Dr. Satya diagnosed the issue quickly. His treatment approach is very systematic and child-friendly. The clinic environment is also very welcoming.',
     platform: 'google',
     verified: true,
     relationship: 'Father of 7-year-old',
@@ -78,7 +78,7 @@ const testimonialData: TestimonialData[] = [
     rating: 5,
     date: '3 weeks ago',
     review:
-      'Best pediatrician in Pune! Dr. Afroz has been treating my kids for 2 years now. He is very knowledgeable and always available for emergencies. Highly recommend to all parents.',
+      'Best pediatrician in Kolkata! Dr. Satya has been treating my kids for 2 years now. He is very knowledgeable and always available for emergencies. Highly recommend to all parents.',
     platform: 'google',
     verified: true,
     relationship: 'Father of 2 children',
@@ -91,7 +91,7 @@ const testimonialData: TestimonialData[] = [
     rating: 5,
     date: '1 month ago',
     review:
-      'Excellent experience! Dr. Afroz is very professional and caring. He takes time to explain everything and never rushes. My baby was completely comfortable during the vaccination. Thank you doctor!',
+      'Excellent experience! Dr. Satya is very professional and caring. He takes time to explain everything and never rushes. My baby was completely comfortable during the vaccination. Thank you doctor!',
     platform: 'google',
     verified: true,
     relationship: 'Mother of 8-month-old',
@@ -104,7 +104,7 @@ const testimonialData: TestimonialData[] = [
     rating: 5,
     date: '1 month ago',
     review:
-      'Dr. Afroz is amazing with children. He has a natural way of making kids feel at ease. His diagnosis is always accurate and treatment is effective. Blessed to have found such a great pediatrician.',
+      'Dr. Satya is amazing with children. He has a natural way of making kids feel at ease. His diagnosis is always accurate and treatment is effective. Blessed to have found such a great pediatrician.',
     platform: 'google',
     verified: true,
     relationship: 'Father of 4-year-old',
@@ -116,7 +116,7 @@ const testimonialData: TestimonialData[] = [
     rating: 5,
     date: '3 weeks ago',
     review:
-      'Best pediatrician in Pune! Dr. Afroz has been treating my kids for 2 years now. He is very knowledgeable and always available for emergencies. Highly recommend to all parents.',
+      'Best pediatrician in Kolkata! Dr. Satya has been treating my kids for 2 years now. He is very knowledgeable and always available for emergencies. Highly recommend to all parents.',
     platform: 'google',
     verified: true,
     relationship: 'Father of 2 children',
@@ -128,7 +128,7 @@ const testimonialData: TestimonialData[] = [
     rating: 5,
     date: '1 month ago',
     review:
-      'Excellent experience! Dr. Afroz is very professional and caring. He takes time to explain everything and never rushes. My baby was completely comfortable during the vaccination. Thank you doctor!',
+      'Excellent experience! Dr. Satya is very professional and caring. He takes time to explain everything and never rushes. My baby was completely comfortable during the vaccination. Thank you doctor!',
     platform: 'google',
     verified: true,
     relationship: 'Mother of 8-month-old',
@@ -140,13 +140,12 @@ const testimonialData: TestimonialData[] = [
     rating: 5,
     date: '1 month ago',
     review:
-      'Dr. Afroz is amazing with children. He has a natural way of making kids feel at ease. His diagnosis is always accurate and treatment is effective. Blessed to have found such a great pediatrician.',
+      'Dr. Satya is amazing with children. He has a natural way of making kids feel at ease. His diagnosis is always accurate and treatment is effective. Blessed to have found such a great pediatrician.',
     platform: 'google',
     verified: true,
     relationship: 'Father of 4-year-old',
   },
 ]
-
 const Testimonials: React.FC<TestimonialsProps> = ({
   className = '',
   autoScrollInterval = 10000,
@@ -156,17 +155,40 @@ const Testimonials: React.FC<TestimonialsProps> = ({
   const [isAutoScrolling, setIsAutoScrolling] = useState(true)
   const [isPaused, setIsPaused] = useState(false)
   const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false)
+  const [itemsPerView, setItemsPerView] = useState(3)
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
 
-  const itemsPerView = 3
+  // Calculate total slides based on items per view
   const totalSlides = Math.ceil(testimonialData.length / itemsPerView)
+
+  // Handle responsive items per view
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setItemsPerView(1)
+      } else if (window.innerWidth <= 1024) {
+        setItemsPerView(2)
+      } else {
+        setItemsPerView(3)
+      }
+      // Reset current index when items per view changes
+      setCurrentIndex(0)
+    }
+
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   // Auto scroll functionality
   useEffect(() => {
-    if (!isAutoScrolling || isPaused) return
+    if (!isAutoScrolling || isPaused || totalSlides <= 1) return
 
     intervalRef.current = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % totalSlides)
+      setCurrentIndex((prev) => {
+        const newIndex = prev + 1
+        return newIndex >= totalSlides ? 0 : newIndex
+      })
     }, autoScrollInterval)
 
     return () => {
@@ -198,11 +220,6 @@ const Testimonials: React.FC<TestimonialsProps> = ({
     ))
   }
 
-  const getVisibleTestimonials = () => {
-    const startIndex = currentIndex * itemsPerView
-    return testimonialData.slice(startIndex, startIndex + itemsPerView)
-  }
-
   const getInitials = (name: string) => {
     return name
       .split(' ')
@@ -217,6 +234,13 @@ const Testimonials: React.FC<TestimonialsProps> = ({
 
   const handleModalClose = () => {
     setIsAppointmentModalOpen(false)
+  }
+
+  // Get current testimonials to display
+  const getCurrentTestimonials = () => {
+    const startIndex = currentIndex * itemsPerView
+    const endIndex = startIndex + itemsPerView
+    return testimonialData.slice(startIndex, endIndex)
   }
 
   return (
@@ -289,8 +313,8 @@ const Testimonials: React.FC<TestimonialsProps> = ({
         {/* Testimonials Carousel */}
         <div className={styles.carouselContainer}>
           {/* Navigation Arrows */}
-          {showNavigation && (
-            <>
+          {showNavigation && totalSlides > 1 && (
+            <div className={styles.navigationContainer}>
               <motion.button
                 className={`${styles.navButton} ${styles.prevButton}`}
                 onClick={handlePrevious}
@@ -310,104 +334,108 @@ const Testimonials: React.FC<TestimonialsProps> = ({
               >
                 <ChevronRight size={20} />
               </motion.button>
-            </>
+            </div>
           )}
 
           {/* Testimonials Grid */}
-          <motion.div
-            className={styles.testimonialsGrid}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            layout
-          >
-            <AnimatePresence mode="wait">
-              {getVisibleTestimonials().map((testimonial, index) => (
-                <motion.div
-                  key={`${testimonial.id}-${currentIndex}`}
-                  className={styles.testimonialCard}
-                  initial={{ opacity: 0, y: 50, scale: 0.9 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: -50, scale: 0.9 }}
-                  transition={{
-                    duration: 0.6,
-                    delay: index * 0.1,
-                    ease: [0.6, -0.05, 0.01, 0.99],
-                  }}
-                  whileHover={{ y: -10, scale: 1.02 }}
-                >
-                  {/* Quote Icon */}
-                  <div className={styles.quoteIcon}>
-                    <Quote size={24} />
-                  </div>
+          <div className={styles.carouselWrapper}>
+            <div
+              className={styles.testimonialsGrid}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <div className={styles.testimonialsWrapper}>
+                {getCurrentTestimonials().map((testimonial, index) => (
+                  <motion.div
+                    key={`${testimonial.id}-${currentIndex}`}
+                    className={styles.testimonialCard}
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -50 }}
+                    transition={{
+                      duration: 0.6,
+                      delay: index * 0.1,
+                      ease: [0.6, -0.05, 0.01, 0.99],
+                    }}
+                  >
+                    {/* Quote Icon */}
+                    <div className={styles.quoteIcon}>
+                      <Quote size={24} />
+                    </div>
 
-                  {/* Card Header */}
-                  <div className={styles.cardHeader}>
-                    <div className={styles.userInfo}>
-                      <div className={styles.avatar}>
-                        {testimonial.avatar ? (
-                          <img
-                            src={testimonial.avatar}
-                            alt={testimonial.name}
-                          />
-                        ) : (
-                          <div className={styles.avatarPlaceholder}>
-                            {getInitials(testimonial.name)}
-                          </div>
-                        )}
+                    {/* Card Header */}
+                    <div className={styles.cardHeader}>
+                      <div className={styles.userInfo}>
+                        <div className={styles.avatar}>
+                          {testimonial.avatar ? (
+                            <img
+                              src={testimonial.avatar}
+                              alt={testimonial.name}
+                            />
+                          ) : (
+                            <div className={styles.avatarPlaceholder}>
+                              {getInitials(testimonial.name)}
+                            </div>
+                          )}
+                        </div>
+                        <div className={styles.userDetails}>
+                          <h4 className={styles.userName}>
+                            {testimonial.name}
+                          </h4>
+                          {testimonial.relationship && (
+                            <p className={styles.userRelation}>
+                              {testimonial.relationship}
+                            </p>
+                          )}
+                        </div>
                       </div>
-                      <div className={styles.userDetails}>
-                        <h4 className={styles.userName}>{testimonial.name}</h4>
-                        {testimonial.relationship && (
-                          <p className={styles.userRelation}>
-                            {testimonial.relationship}
-                          </p>
-                        )}
+
+                      <div className={styles.platformBadge}>
+                        <div className={styles.googleIconSmall}>G</div>
                       </div>
                     </div>
 
-                    <div className={styles.platformBadge}>
-                      <div className={styles.googleIconSmall}>G</div>
+                    {/* Rating */}
+                    <div className={styles.rating}>
+                      <div className={styles.stars}>
+                        {renderStars(testimonial.rating)}
+                      </div>
+                      <span className={styles.date}>
+                        <Calendar size={12} />
+                        {testimonial.date}
+                      </span>
                     </div>
-                  </div>
 
-                  {/* Rating */}
-                  <div className={styles.rating}>
-                    <div className={styles.stars}>
-                      {renderStars(testimonial.rating)}
-                    </div>
-                    <span className={styles.date}>
-                      <Calendar size={12} />
-                      {testimonial.date}
-                    </span>
-                  </div>
+                    {/* Review Text */}
+                    <p className={styles.reviewText}>{testimonial.review}</p>
 
-                  {/* Review Text */}
-                  <p className={styles.reviewText}>{testimonial.review}</p>
-
-                  {/* Verified Badge */}
-                  {testimonial.verified && (
-                    <div className={styles.verifiedBadge}>
-                      <div className={styles.verifiedIcon}>✓</div>
-                      <span>Verified Review</span>
-                    </div>
-                  )}
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </motion.div>
+                    {/* Verified Badge */}
+                    {testimonial.verified && (
+                      <div className={styles.verifiedBadge}>
+                        <div className={styles.verifiedIcon}>✓</div>
+                        <span>Verified Review</span>
+                      </div>
+                    )}
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
 
           {/* Pagination Dots */}
-          <div className={styles.pagination}>
-            {Array.from({ length: totalSlides }, (_, index) => (
-              <button
-                key={index}
-                className={`${styles.dot} ${
-                  index === currentIndex ? styles.active : ''
-                }`}
-                onClick={() => setCurrentIndex(index)}
-              />
-            ))}
-          </div>
+          {totalSlides > 1 && (
+            <div className={styles.pagination}>
+              {Array.from({ length: totalSlides }, (_, index) => (
+                <button
+                  key={index}
+                  className={`${styles.dot} ${
+                    index === currentIndex ? styles.active : ''
+                  }`}
+                  onClick={() => setCurrentIndex(index)}
+                />
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Call to Action */}
@@ -433,6 +461,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({
           </motion.button>
         </motion.div>
       </div>
+
       {/* Appointment Modal */}
       <AppointmentModal
         isOpen={isAppointmentModalOpen}

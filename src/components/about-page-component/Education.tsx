@@ -311,9 +311,6 @@ const EducationQualifications: React.FC<EducationQualificationsProps> = ({
                         {edu.year}
                       </span>
                     </div>
-                    {/* {edu.grade && (
-                      <span className={styles.grade}>{edu.grade}</span>
-                    )} */}
                   </div>
                 </motion.div>
               ))}

@@ -59,10 +59,10 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1.25rem;
-  background: rgba(14, 165, 233, 0.1);
-  border: 1px solid rgba(14, 165, 233, 0.2);
+  background: rgba(124, 58, 237, 0.1);
+  border: 1px solid rgba(124, 58, 237, 0.2);
   border-radius: 50px;
-  color: var(--medical-blue);
+  color: var(--medical-purple);
   font-size: 0.875rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
@@ -80,7 +80,7 @@
 }
 
 .highlightText {
-  background: var(--secondary-gradient);
+  background: var(--primary-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -93,9 +93,9 @@
   margin: 0 auto;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(90deg, #0ea5e9 0%, #3b82f6 50%, #059669 100%);
+  background: linear-gradient(90deg, #7c3aed 0%, #a855f7 50%, #c084fc 100%);
   transform-origin: left center;
-  box-shadow: 0 2px 8px rgba(14, 165, 233, 0.4);
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.4);
 }
 
 .titleGradientLine::before {
@@ -166,7 +166,7 @@
   justify-content: center;
   background: var(--primary-gradient);
   color: white;
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
 }
 
 .cardTitle {
@@ -194,7 +194,7 @@
 }
 
 /* ===========================
-   RATING CARD
+   RATING CARD (Keep Yellow)
    =========================== */
 
 .ratingCard .cardIcon {
@@ -250,9 +250,9 @@
   margin: 0;
 }
 
-.ratingBreakdown {
+/* .ratingBreakdown {
   space-y: 0.75rem;
-}
+} */
 
 .ratingRow {
   display: flex;
@@ -297,7 +297,7 @@
 }
 
 /* ===========================
-   RATING SUMMARY
+   RATING SUMMARY (Keep Yellow)
    =========================== */
 
 .ratingSummary {
@@ -345,12 +345,12 @@
 }
 
 /* ===========================
-   STATISTICS CARD
+   STATISTICS CARD (Purple Theme)
    =========================== */
 
 .statsCard .cardIcon {
   background: var(--secondary-gradient);
-  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
 .statItem {
@@ -358,9 +358,9 @@
   align-items: center;
   gap: 1.5rem;
   margin-bottom: 1.5rem; /* Reduced from 2rem to 1.5rem */
-  padding: 1.25rem; /* Reduced from 1.5rem to 1.25rem */
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
+  padding: 1.5rem; /* Reduced from 1.5rem to 1.25rem */
+  background: rgba(124, 58, 237, 0.05);
+  border: 1px solid rgba(124, 58, 237, 0.1);
   border-radius: 16px;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
@@ -368,7 +368,7 @@
 
 .statItem:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.15);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.15);
 }
 
 .statIcon {
@@ -409,19 +409,19 @@
 }
 
 /* ===========================
-   REVIEWS CARD
+   REVIEWS CARD (Purple Theme)
    =========================== */
 
 .reviewsCard .cardIcon {
   background: var(--accent-gradient);
-  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+  box-shadow: 0 4px 12px rgba(192, 132, 252, 0.3);
 }
 
 .reviewItem {
   margin-bottom: 1.5rem; /* Reduced from 2rem to 1.5rem */
   padding: 1.25rem; /* Reduced from 1.5rem to 1.25rem */
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
+  background: rgba(124, 58, 237, 0.05);
+  border: 1px solid rgba(124, 58, 237, 0.1);
   border-radius: 16px;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
@@ -454,7 +454,7 @@
 }
 
 .verifiedIcon {
-  color: var(--medical-green);
+  color: var(--medical-purple);
 }
 
 .patientDetails {
@@ -497,8 +497,8 @@
 .googleReviewLink {
   margin-top: 0.75rem; /* Reduced from 1rem to 0.75rem */
   padding: 1.25rem; /* Reduced from 1.5rem to 1.25rem */
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
+  background: rgba(124, 58, 237, 0.05);
+  border: 1px solid rgba(124, 58, 237, 0.1);
   border-radius: 16px;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
@@ -581,7 +581,7 @@
   opacity: 0.3;
 }
 
-/* Rating Card Hover */
+/* Rating Card Hover (Keep Yellow) */
 .ratingCard .hoverEffect {
   background: linear-gradient(
     to top,
@@ -604,14 +604,14 @@
   border-color: rgba(251, 191, 36, 0.4);
 }
 
-/* Statistics Card Hover */
+/* Statistics Card Hover (Purple) */
 .statsCard .hoverEffect {
   background: linear-gradient(
     to top,
-    #0369a1 0%,
-    #0ea5e9 30%,
-    rgba(14, 165, 233, 0.6) 70%,
-    rgba(14, 165, 233, 0.2) 100%
+    #7c3aed 0%,
+    #a855f7 30%,
+    rgba(124, 58, 237, 0.6) 70%,
+    rgba(124, 58, 237, 0.2) 100%
   );
 }
 
@@ -623,18 +623,18 @@
 
 .statsCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(14, 165, 233, 0.3);
-  border-color: rgba(14, 165, 233, 0.4);
+  box-shadow: 0 20px 60px rgba(124, 58, 237, 0.3);
+  border-color: rgba(124, 58, 237, 0.4);
 }
 
-/* Reviews Card Hover */
+/* Reviews Card Hover (Purple) */
 .reviewsCard .hoverEffect {
   background: linear-gradient(
     to top,
     #7c3aed 0%,
     #a855f7 30%,
-    rgba(168, 85, 247, 0.6) 70%,
-    rgba(168, 85, 247, 0.2) 100%
+    rgba(124, 58, 237, 0.6) 70%,
+    rgba(124, 58, 237, 0.2) 100%
   );
 }
 
@@ -646,8 +646,8 @@
 
 .reviewsCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(168, 85, 247, 0.3);
-  border-color: rgba(168, 85, 247, 0.4);
+  box-shadow: 0 20px 60px rgba(124, 58, 237, 0.3);
+  border-color: rgba(124, 58, 237, 0.4);
 }
 
 /* ===========================
@@ -989,7 +989,7 @@
 /* Accessibility Improvements */
 .card:focus-visible,
 .googleReviewButton:focus-visible {
-  outline: 2px solid var(--medical-blue);
+  outline: 2px solid var(--medical-purple);
   outline-offset: 4px;
 }
 

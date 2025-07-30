@@ -163,7 +163,8 @@ const AboutDoctor: React.FC<AboutDoctorProps> = ({ className = '' }) => {
             animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            About <span className={styles.highlightText}>Dr. Afroz Ahmed</span>
+            About{' '}
+            <span className={styles.highlightText}>Dr. Satya Sadhan Ray</span>
           </motion.h2>
 
           <motion.div
@@ -191,7 +192,7 @@ const AboutDoctor: React.FC<AboutDoctorProps> = ({ className = '' }) => {
             animate={isVisible ? 'visible' : 'hidden'}
           >
             <div className={styles.doctorTitle}>
-              <h3 className={styles.doctorName}>Dr. Afroz Ahmed</h3>
+              <h3 className={styles.doctorName}>Dr. Satya Sadhan Ray</h3>
               <div className={styles.qualificationsList}>
                 {qualifications.map((qual, index) => (
                   <motion.span
@@ -215,13 +216,13 @@ const AboutDoctor: React.FC<AboutDoctorProps> = ({ className = '' }) => {
               className={styles.doctorDescription}
               variants={aboutMotionVariants.aboutItem}
             >
-              Dr. Afroz Ahmed is a distinguished Consultant Pediatrician and
-              Pediatric Intensive Care Specialist with exceptional expertise in
-              managing critical pediatric cases. Currently serving as Associate
-              Professor of Pediatrics and In-Charge of the Pediatric Intensive
-              Care Unit (PICU) at the Institute Of Child Health (ICH), he has
-              been instrumental in establishing world-class pediatric care
-              standards.
+              Dr. Satya Sadhan Ray is a distinguished Consultant Pediatrician
+              and Pediatric Intensive Care Specialist with exceptional expertise
+              in managing critical pediatric cases. Currently serving as
+              Associate Professor of Pediatrics and In-Charge of the Pediatric
+              Intensive Care Unit (PICU) at the Institute Of Child Health (ICH),
+              he has been instrumental in establishing world-class pediatric
+              care standards.
             </motion.p>
 
             <motion.p
@@ -283,7 +284,7 @@ const AboutDoctor: React.FC<AboutDoctorProps> = ({ className = '' }) => {
                 <div className={styles.imageGradientBorder}>
                   <img
                     src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=500&h=600&fit=crop&crop=face&auto=format&q=80"
-                    alt="Dr. Afroz Ahmed - Pediatric Specialist"
+                    alt="Dr. Satya Sadhan Ray - Pediatric Specialist"
                     className={styles.doctorImage}
                   />
                 </div>

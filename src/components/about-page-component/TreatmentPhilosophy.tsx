@@ -82,7 +82,8 @@ const TreatmentPhilosophy: React.FC<TreatmentPhilosophyProps> = ({
       'Evidence-based medicine with human touch',
       'Continuous learning and adaptation',
       'Building trust through transparent communication',
-    ], // Kept 6 principles
+      // 'Culturally respectful and inclusive care for all families',
+    ],
   }
 
   const approaches: Approach[] = [
@@ -396,7 +397,7 @@ const TreatmentPhilosophy: React.FC<TreatmentPhilosophyProps> = ({
               illness, but to nurture wellness and bring smiles back to little
               faces."
             </blockquote>
-            <cite className={styles.quoteAuthor}>- Dr. Afroz Ahmed</cite>
+            <cite className={styles.quoteAuthor}>- Dr. Satya Sadha Ray</cite>
           </div>
         </motion.div>
       </div>
