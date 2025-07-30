@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   position: relative;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
   overflow: hidden;
   padding: 14rem 0 4rem 0; /* Increased padding for laptop screens */
 }
@@ -34,21 +34,21 @@
   overflow: hidden;
 }
 
-/* Animated Medical Plus Icons */
+/* Animated Medical Plus Icons - Updated to Purple */
 .medicalIcon {
   position: absolute;
-  color: rgba(16, 185, 129, 0.7);
+  color: rgba(124, 58, 237, 0.7);
   font-size: 32px; /* Increased font size for thicker plus symbols */
   font-weight: bold; /* Make plus symbols thicker */
   animation: medicalFloat 8s ease-in-out infinite;
   z-index: 1;
-  filter: drop-shadow(0 2px 4px rgba(16, 185, 129, 0.2));
+  filter: drop-shadow(0 2px 4px rgba(124, 58, 237, 0.2));
   font-family: 'Arial', sans-serif; /* Use system font for consistent plus symbols */
 }
 
 [data-theme='dark'] .medicalIcon {
-  color: rgba(16, 185, 129, 0.6);
-  filter: drop-shadow(0 2px 4px rgba(16, 185, 129, 0.3));
+  color: rgba(124, 58, 237, 0.6);
+  filter: drop-shadow(0 2px 4px rgba(124, 58, 237, 0.3));
 }
 
 /* Remove Medical Cross Symbols - Keeping only Plus Icons */
@@ -98,16 +98,16 @@
   gap: 2rem;
 }
 
-/* Trust Badge */
+/* Trust Badge - Updated to Purple */
 .badge {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
-  background: rgba(16, 185, 129, 0.1);
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  background: rgba(124, 58, 237, 0.1);
+  border: 1px solid rgba(124, 58, 237, 0.2);
   border-radius: 50px;
-  color: var(--medical-green);
+  color: var(--medical-purple);
   font-size: 0.875rem;
   font-weight: 600;
   width: fit-content;
@@ -171,11 +171,11 @@
   overflow: hidden;
 }
 
-/* Primary Button (Book Appointment) */
+/* Primary Button (Book Appointment) - Updated to Purple */
 .primaryBtn {
   background: var(--primary-gradient);
   color: white;
-  box-shadow: 0 8px 30px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 8px 30px rgba(124, 58, 237, 0.3);
 }
 
 .primaryBtn::before {
@@ -233,7 +233,7 @@
   margin-top: 1rem;
 }
 
-/* Individual Stat Item */
+/* Individual Stat Item - Updated hover to Purple */
 .statItem {
   display: flex;
   align-items: center;
@@ -248,13 +248,13 @@
 }
 
 .statItem:hover {
-  background: rgba(16, 185, 129, 0.1);
-  border-color: rgba(16, 185, 129, 0.3);
+  background: rgba(124, 58, 237, 0.1);
+  border-color: rgba(124, 58, 237, 0.3);
 }
 
-/* Stat Icon Styling */
+/* Stat Icon Styling - Updated to Purple */
 .statIcon {
-  color: var(--medical-green);
+  color: var(--medical-purple);
   flex-shrink: 0;
 }
 
@@ -341,7 +341,7 @@
   margin: 0 auto;
 }
 
-/* Doctor Photo Styling */
+/* Doctor Photo Styling - Updated shadow to Purple */
 .doctorPhoto {
   width: 250px;
   height: 250px;
@@ -351,16 +351,16 @@
   border: 4px solid transparent;
   background: var(--primary-gradient);
   padding: 4px;
-  box-shadow: 0 20px 40px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 20px 40px rgba(124, 58, 237, 0.3);
   transition: all 0.3s ease;
 }
 
 .doctorPhoto:hover {
   transform: scale(1.05);
-  box-shadow: 0 25px 50px rgba(16, 185, 129, 0.4);
+  box-shadow: 0 25px 50px rgba(124, 58, 237, 0.4);
 }
 
-/* Floating Icons Around Doctor */
+/* Floating Icons Around Doctor - Updated to Purple */
 .floatingIcon {
   position: absolute;
   width: 40px;
@@ -372,8 +372,8 @@
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(10px);
-  color: var(--medical-green);
-  box-shadow: 0 8px 16px rgba(16, 185, 129, 0.2);
+  color: var(--medical-purple);
+  box-shadow: 0 8px 16px rgba(124, 58, 237, 0.2);
 }
 
 /* ===========================

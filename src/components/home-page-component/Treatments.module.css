@@ -12,7 +12,7 @@
   min-height: 100vh;
 }
 
-/* Background Elements */
+/* Background Elements - Updated to Purple */
 .backgroundPattern {
   position: absolute;
   top: 0;
@@ -21,12 +21,12 @@
   height: 100%;
   background: radial-gradient(
       circle at 75% 75%,
-      rgba(3, 105, 161, 0.05) 0%,
+      rgba(99, 102, 241, 0.05) 0%,
       transparent 50%
     ),
     radial-gradient(
       circle at 50% 50%,
-      rgba(168, 85, 247, 0.03) 0%,
+      rgba(124, 58, 237, 0.03) 0%,
       transparent 70%
     );
   z-index: 1;
@@ -51,34 +51,47 @@
   animation: floatOrb 15s ease-in-out infinite;
 }
 
+/* Updated Orb Colors to Purple - Fixed Flickering */
 .orb1 {
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, #10b981, transparent);
+  background: radial-gradient(circle, #7c3aed, transparent);
   top: 10%;
   right: 10%;
   animation-delay: 0s;
+  /* Anti-flickering optimizations */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform;
 }
 
 .orb2 {
   width: 320px;
   height: 320px;
-  background: radial-gradient(circle, #0ea5e9, transparent);
+  background: radial-gradient(circle, #a855f7, transparent);
   bottom: 20%;
   left: 5%;
   animation-delay: 8s;
+  /* Anti-flickering optimizations */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform;
 }
 
 @keyframes floatOrb {
   0%,
   100% {
-    transform: translateY(0px) translateX(0px) scale(1);
+    transform: translateZ(0) translateY(0px) translateX(0px) scale(1);
   }
   33% {
-    transform: translateY(-40px) translateX(30px) scale(1.1);
+    transform: translateZ(0) translateY(-30px) translateX(20px) scale(1.05);
   }
   66% {
-    transform: translateY(30px) translateX(-20px) scale(0.9);
+    transform: translateZ(0) translateY(20px) translateX(-15px) scale(0.95);
   }
 }
 
@@ -92,7 +105,7 @@
 }
 
 /* ===========================
-   HEADER SECTION
+   HEADER SECTION - Updated to Purple
    =========================== */
 
 .header {
@@ -108,10 +121,10 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1.25rem;
-  background: rgba(16, 185, 129, 0.1);
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  background: rgba(124, 58, 237, 0.1);
+  border: 1px solid rgba(124, 58, 237, 0.2);
   border-radius: 50px;
-  color: var(--medical-green);
+  color: var(--medical-purple);
   font-size: 0.875rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
@@ -120,7 +133,7 @@
 }
 
 .sectionBadge svg {
-  color: var(--medical-green);
+  color: var(--medical-purple);
 }
 
 .title {
@@ -139,13 +152,14 @@
   background-clip: text;
 }
 
+/* Updated Title Gradient Line to Purple */
 .titleGradientLine {
   height: 4px;
   width: 140px;
   border-radius: 2px;
   margin: 0 auto 2rem;
-  background: linear-gradient(90deg, #10b981 0%, #0ea5e9 50%, #a855f7 100%);
-  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+  background: linear-gradient(90deg, #7c3aed 0%, #a855f7 50%, #c084fc 100%);
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.4);
 }
 
 .subtitle {
@@ -178,11 +192,20 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
-  transition: all 0.4s ease;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.3s ease;
   cursor: pointer;
   height: 100%;
   display: flex;
   flex-direction: column;
+  /* Anti-flickering optimizations */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  will-change: transform, box-shadow;
 }
 
 .treatmentCard::before {
@@ -202,25 +225,31 @@
   border-color: var(--card-border-hover);
 }
 
-/* Card Glow Effect */
+/* Card Glow Effect - Fixed Flickering */
 .cardGlow {
   position: absolute;
   inset: 0;
   opacity: 0;
   background: radial-gradient(
-    600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    600px circle at 50% 50%,
     var(--glow-color),
     transparent 40%
   );
-  transition: opacity 0.5s ease;
+  transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   pointer-events: none;
+  /* Anti-flickering optimizations */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: opacity;
 }
 
 .treatmentCard:hover .cardGlow {
-  opacity: 1;
+  opacity: 0.15;
 }
 
-/* Icon Section */
+/* Icon Section - Fixed Flickering */
 .iconContainer {
   position: relative;
   z-index: 10;
@@ -233,15 +262,25 @@
   margin-bottom: 2rem;
   background: var(--icon-gradient);
   box-shadow: var(--icon-shadow);
-  transition: all 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* Anti-flickering optimizations */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform;
+  transform-origin: center center;
 }
 
 .iconContainer svg {
   color: white;
+  /* Prevent icon flickering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .treatmentCard:hover .iconContainer {
-  transform: rotate(-10deg) scale(1.05);
+  transform: translateZ(0) rotate(-5deg) scale(1.02);
 }
 
 /* Content */
@@ -270,7 +309,7 @@
   flex-grow: 1;
 }
 
-/* Features List */
+/* Features List - Fixed Flickering */
 .features {
   display: flex;
   flex-direction: column;
@@ -283,11 +322,17 @@
   align-items: center;
   gap: 0.75rem;
   padding: 0.5rem 0;
-  transition: all 0.3s ease;
+  transition: transform 0.2s ease-out;
+  /* Anti-flickering optimizations */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform;
 }
 
 .feature:hover {
-  transform: translateX(4px);
+  transform: translateZ(0) translateX(2px);
 }
 
 .featureDot {
@@ -296,6 +341,9 @@
   border-radius: 50%;
   background: var(--feature-dot-color);
   flex-shrink: 0;
+  /* Prevent dot flickering */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .featureText {
@@ -305,7 +353,7 @@
   font-family: 'Inter', sans-serif;
 }
 
-/* CTA Button */
+/* CTA Button - Fixed Flickering */
 .ctaButton {
   width: 100%;
   background: var(--button-gradient-color);
@@ -317,7 +365,8 @@
   font-weight: 600;
   font-family: 'Inter', sans-serif;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -326,6 +375,14 @@
   position: relative;
   overflow: hidden;
   margin-top: auto;
+  /* Anti-flickering optimizations */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform, box-shadow;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .ctaButton::before {
@@ -338,10 +395,13 @@
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.15) 50%,
     transparent 100%
   );
-  transition: all 0.6s ease;
+  transition: left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* Prevent shimmer flickering */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .ctaButton:hover::before {
@@ -349,11 +409,11 @@
 }
 
 .ctaButton:hover {
-  transform: translateY(-2px) scale(1.02);
+  transform: translateZ(0) translateY(-1px) scale(1.01);
   box-shadow: var(--button-hover-shadow);
 }
 
-/* Floating Element */
+/* Floating Element - Fixed Flickering */
 .floatingElement {
   position: absolute;
   top: 1rem;
@@ -361,12 +421,18 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  opacity: 0.2;
+  opacity: 0.15;
   background: var(--floating-element-color);
+  /* Anti-flickering optimizations */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform;
 }
 
 /* ===========================
-   BOTTOM CTA
+   BOTTOM CTA - Updated to Purple
    =========================== */
 
 .bottomCta {
@@ -380,21 +446,28 @@
   gap: 1rem;
   padding: 1.5rem 2rem;
   background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  border: 1px solid rgba(124, 58, 237, 0.2);
   border-radius: 20px;
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.3s ease;
+  /* Anti-flickering optimizations */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform, box-shadow;
 }
 
 .bottomCtaCard:hover {
-  transform: translateY(-4px);
+  transform: translateZ(0) translateY(-2px);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-  border-color: rgba(16, 185, 129, 0.3);
+  border-color: rgba(124, 58, 237, 0.3);
 }
 
 .bottomCtaCard svg {
-  color: var(--medical-green);
+  color: var(--medical-purple);
 }
 
 .bottomCtaText {
@@ -405,7 +478,7 @@
 }
 
 .bottomCtaLink {
-  color: var(--medical-green);
+  color: var(--medical-purple);
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -418,7 +491,7 @@
 }
 
 /* ===========================
-   CARD VARIANTS
+   CARD VARIANTS - Keep All Original Colors
    =========================== */
 
 /* Green Card */
@@ -615,7 +688,7 @@
 }
 
 [data-theme='dark'] .bottomCtaCard:hover {
-  border-color: rgba(16, 185, 129, 0.3);
+  border-color: rgba(124, 58, 237, 0.3);
 }
 
 /* ===========================
@@ -639,10 +712,10 @@
   }
 }
 
-/* Focus states for keyboard navigation */
+/* Focus states for keyboard navigation - Updated to Purple */
 .treatmentCard:focus-visible,
 .ctaButton:focus-visible {
-  outline: 2px solid var(--medical-green);
+  outline: 2px solid var(--medical-purple);
   outline-offset: 4px;
 }
 

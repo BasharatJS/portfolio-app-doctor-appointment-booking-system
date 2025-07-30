@@ -70,7 +70,7 @@ const Footer: React.FC<FooterProps> = ({ className = '' }) => {
 
   const quickLinks: QuickLink[] = [
     { id: 'home', label: 'Home', path: '/' },
-    { id: 'about', label: 'About Dr. Afroz', path: '/about' },
+    { id: 'about', label: 'About Dr. Satya', path: '/about' },
     { id: 'services', label: 'Our Services', path: '/services' },
     { id: 'appointment', label: 'Book Appointment', path: '/appointment' },
     // { id: 'chamber', label: 'Chamber Details', path: '/chamber-details' },
@@ -94,14 +94,14 @@ const Footer: React.FC<FooterProps> = ({ className = '' }) => {
       id: 'phone',
       type: 'phone',
       label: 'Phone Number',
-      value: '+91 98765 43210',
+      value: '+91 9434078214',
       icon: Phone,
     },
     {
       id: 'email',
       type: 'email',
       label: 'Email Address',
-      value: 'afroz@gmail.com',
+      value: 'drsatyasadhan1971@gmail.com',
       icon: Mail,
     },
   ]
@@ -153,7 +153,7 @@ const Footer: React.FC<FooterProps> = ({ className = '' }) => {
                   <Heart size={24} />
                 </motion.div>
                 <h2 className={styles.clinicName}>
-                  <span className={styles.clinicNameAfroz}>Afroz </span>
+                  <span className={styles.clinicNameAfroz}>Dr. Satya </span>
                   <span className={styles.clinicNamePediatrics}>
                     Pediatrics
                   </span>
@@ -164,9 +164,9 @@ const Footer: React.FC<FooterProps> = ({ className = '' }) => {
                 className={styles.doctorInfo}
                 variants={footerItemVariants}
               >
-                <h3 className={styles.doctorName}>Dr. Afroz Ahmed</h3>
+                <h3 className={styles.doctorName}>Dr. Satya Sadhan Ray</h3>
                 <p className={styles.doctorTitle}>
-                  MBBS, MD (Pediatrics)
+                  MBBS DCH MD(ANESTHESIA) REG NO. 52817 WBMC
                   <br />
                   Consultant Pediatrician & Child Specialist
                   <br />
@@ -356,7 +356,7 @@ const Footer: React.FC<FooterProps> = ({ className = '' }) => {
               animate={isInView ? { opacity: 1 } : { opacity: 0 }}
               transition={{ delay: 1.2, duration: 0.6 }}
             >
-              © 2024 Afroz Pediatrics. All rights reserved.
+              © 2025 Satya Pediatrics. All rights reserved.
             </motion.p>
             <motion.div
               className={styles.footerBottomLinks}

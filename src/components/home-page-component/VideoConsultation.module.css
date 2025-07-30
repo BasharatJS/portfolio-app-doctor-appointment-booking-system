@@ -8,7 +8,13 @@
 
 .videoSection {
   padding: 4rem 0;
-  background: linear-gradient(135deg, #10b981 0%, #0ea5e9 50%, #a855f7 100%);
+  background: linear-gradient(
+    135deg,
+    #6b21a8 0%,
+    #7c3aed 30%,
+    #a855f7 70%,
+    #c084fc 100%
+  );
   position: relative;
   overflow: hidden;
   min-height: 70vh;
@@ -117,11 +123,11 @@
 }
 
 /* ===========================
-   LEFT CONTENT SECTION
+   LEFT CONTENT SECTION - Fixed Text Visibility
    =========================== */
 
 .leftContent {
-  color: var(--text-primary);
+  color: white;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -135,7 +141,7 @@
   background: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 50px;
-  color: var(--text-primary);
+  color: white;
   font-size: 0.875rem;
   font-weight: 600;
   backdrop-filter: blur(10px);
@@ -144,12 +150,12 @@
 }
 
 .badge:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
   transform: translateY(-2px);
 }
 
 .badge svg {
-  color: var(--text-primary);
+  color: white;
 }
 
 .title {
@@ -158,16 +164,12 @@
   font-family: 'Poppins', sans-serif;
   line-height: 1.2;
   margin: 0;
-  color: var(--text-primary);
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  color: white;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .titleHighlight {
-  background: linear-gradient(
-    90deg,
-    var(--text-primary) 0%,
-    var(--text-secondary) 100%
-  );
+  background: linear-gradient(90deg, #ffffff 0%, #f1f5f9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -181,38 +183,35 @@
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(
-    90deg,
-    var(--text-primary) 0%,
-    var(--text-secondary) 100%
-  );
+  background: linear-gradient(90deg, #ffffff 0%, #f1f5f9 100%);
   border-radius: 2px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .description {
   font-size: 1.125rem;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.9);
   line-height: 1.7;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .doctorName {
   font-weight: 700;
-  color: var(--text-primary);
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  color: white;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .appLink {
-  color: var(--text-primary);
+  color: #fbbf24;
   font-weight: 600;
   text-decoration: underline;
   transition: all 0.3s ease;
 }
 
 .appLink:hover {
-  color: var(--text-secondary);
+  color: #f59e0b;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -220,8 +219,8 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 16px;
   padding: 1.5rem;
   backdrop-filter: blur(15px);
@@ -230,7 +229,7 @@
 .timingsTitle {
   font-size: 1.125rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: white;
   margin: 0;
   display: flex;
   align-items: center;
@@ -239,12 +238,12 @@
 }
 
 .timingsTitle svg {
-  color: var(--text-primary);
+  color: white;
 }
 
 .timingsText {
   font-size: 1rem;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.85);
   margin: 0;
   font-family: 'Inter', sans-serif;
 }
@@ -256,9 +255,9 @@
 }
 
 .primaryButton {
-  background: var(--secondary-gradient);
+  background: rgba(255, 255, 255, 0.15);
   color: white;
-  border: none;
+  border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 16px;
   padding: 1rem 2rem;
   font-size: 1rem;
@@ -269,9 +268,10 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  box-shadow: 0 4px 12px rgba(3, 105, 161, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   position: relative;
   overflow: hidden;
+  backdrop-filter: blur(10px);
 }
 
 .primaryButton::before {
@@ -281,7 +281,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+  background: rgba(255, 255, 255, 0.2);
   transition: all 0.6s ease;
   z-index: 0;
 }
@@ -292,7 +292,9 @@
 
 .primaryButton:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(3, 105, 161, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .primaryButton span,
@@ -302,9 +304,9 @@
 }
 
 .secondaryButton {
-  background: var(--primary-gradient);
-  color: white;
-  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  color: #7c3aed;
+  border: 2px solid rgba(255, 255, 255, 1);
   border-radius: 16px;
   padding: 1rem 2rem;
   font-size: 1rem;
@@ -315,7 +317,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   position: relative;
   overflow: hidden;
 }
@@ -327,7 +329,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: var(--primary-gradient-reverse);
+  background: #7c3aed;
   transition: all 0.6s ease;
   z-index: 0;
 }
@@ -338,13 +340,15 @@
 
 .secondaryButton:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(5, 150, 105, 0.4);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.4);
+  color: white;
 }
 
 .secondaryButton span,
 .secondaryButton svg {
   position: relative;
   z-index: 1;
+  transition: color 0.3s ease;
 }
 
 /* ===========================
@@ -384,7 +388,7 @@
 }
 
 .videoCallInterface {
-  background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+  background: linear-gradient(135deg, #7c3aed 0%, #6366f1 100%);
   border-radius: 8px;
   padding: 1.5rem;
   position: relative;
@@ -401,7 +405,7 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -416,10 +420,10 @@
 @keyframes pulse {
   0%,
   100% {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(16, 185, 129, 0.4);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(124, 58, 237, 0.4);
   }
   50% {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2), 0 0 0 20px rgba(16, 185, 129, 0);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2), 0 0 0 20px rgba(124, 58, 237, 0);
   }
 }
 
@@ -634,11 +638,63 @@
 }
 
 /* ===========================
-   DARK THEME SUPPORT
+   DARK THEME SUPPORT - Fixed for Better Visibility
    =========================== */
 
 [data-theme='dark'] .videoSection {
-  background: linear-gradient(135deg, #047857 0%, #075985 50%, #6d28d9 100%);
+  background: linear-gradient(
+    135deg,
+    #581c87 0%,
+    #6b21a8 30%,
+    #7c3aed 70%,
+    #8b5cf6 100%
+  );
+}
+
+[data-theme='dark'] .leftContent {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+[data-theme='dark'] .title {
+  color: white;
+}
+
+[data-theme='dark'] .description {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+[data-theme='dark'] .doctorName {
+  color: white;
+}
+
+[data-theme='dark'] .appLink {
+  color: #fcd34d;
+}
+
+[data-theme='dark'] .appLink:hover {
+  color: #fbbf24;
+}
+
+[data-theme='dark'] .timingsTitle {
+  color: white;
+}
+
+[data-theme='dark'] .timingsText {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+[data-theme='dark'] .badge {
+  color: white;
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+[data-theme='dark'] .badge svg {
+  color: white;
+}
+
+[data-theme='dark'] .timingsTitle svg {
+  color: white;
 }
 
 [data-theme='dark'] .computerFrame {
@@ -651,29 +707,29 @@
 }
 
 [data-theme='dark'] .primaryButton {
-  background: var(--secondary-gradient);
-  box-shadow: 0 4px 12px rgba(7, 89, 133, 0.4);
-}
-
-[data-theme='dark'] .primaryButton::before {
-  background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: white;
 }
 
 [data-theme='dark'] .primaryButton:hover {
-  box-shadow: 0 8px 24px rgba(7, 89, 133, 0.5);
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 [data-theme='dark'] .secondaryButton {
-  background: var(--primary-gradient);
-  box-shadow: 0 4px 12px rgba(4, 120, 87, 0.4);
+  background: rgba(255, 255, 255, 0.9);
+  color: #6b21a8;
+  border-color: rgba(255, 255, 255, 1);
 }
 
 [data-theme='dark'] .secondaryButton::before {
-  background: var(--primary-gradient-reverse);
+  background: #6b21a8;
 }
 
 [data-theme='dark'] .secondaryButton:hover {
-  box-shadow: 0 8px 24px rgba(4, 120, 87, 0.5);
+  color: white;
+  box-shadow: 0 8px 24px rgba(107, 33, 168, 0.4);
 }
 
 /* ===========================

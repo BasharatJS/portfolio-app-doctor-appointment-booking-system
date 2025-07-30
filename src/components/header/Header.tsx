@@ -29,6 +29,12 @@ const Header: React.FC<HeaderProps> = ({ activeNav, onNavChange }) => {
     { label: 'BLOG', path: '/blog' },
   ]
 
+  // Consistent contact information
+  const contactInfo = {
+    email: 'drsatyasadhan1971@gmail.com',
+    phone: '+91 9434078214',
+  }
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10)
@@ -79,7 +85,7 @@ const Header: React.FC<HeaderProps> = ({ activeNav, onNavChange }) => {
                 <Heart size={28} className={styles.heartIcon} />
               </div>
               <div className={styles.clinicName}>
-                <h1>Afroz Pediatrics</h1>
+                <h1>Satya Pediatrics</h1>
               </div>
             </motion.div>
 
@@ -96,7 +102,9 @@ const Header: React.FC<HeaderProps> = ({ activeNav, onNavChange }) => {
                 </div>
                 <div className={styles.contactText}>
                   <span className={styles.contactLabel}>EMAIL</span>
-                  <span className={styles.contactValue}>afroz@gmail.com</span>
+                  <span className={styles.contactValue}>
+                    {contactInfo.email}
+                  </span>
                 </div>
               </div>
               <div className={styles.contactDivider}></div>
@@ -106,7 +114,9 @@ const Header: React.FC<HeaderProps> = ({ activeNav, onNavChange }) => {
                 </div>
                 <div className={styles.contactText}>
                   <span className={styles.contactLabel}>PHONE</span>
-                  <span className={styles.contactValue}>+91 98765 43210</span>
+                  <span className={styles.contactValue}>
+                    {contactInfo.phone}
+                  </span>
                 </div>
               </div>
             </motion.div>
@@ -205,15 +215,15 @@ const Header: React.FC<HeaderProps> = ({ activeNav, onNavChange }) => {
               exit="closed"
             >
               <div className={styles.mobileNavContent}>
-                {/* Mobile Contact Info */}
+                {/* Mobile Contact Info - Now consistent with desktop */}
                 <div className={styles.mobileContact}>
                   <div className={styles.mobileContactItem}>
                     <Mail size={16} />
-                    <span>afroz@gmail.com</span>
+                    <span>{contactInfo.email}</span>
                   </div>
                   <div className={styles.mobileContactItem}>
                     <Phone size={16} />
-                    <span>+91 98765 43210</span>
+                    <span>{contactInfo.phone}</span>
                   </div>
                 </div>
 
@@ -256,7 +266,7 @@ const Header: React.FC<HeaderProps> = ({ activeNav, onNavChange }) => {
                   <motion.button
                     className={`${styles.mobileActionBtn} ${styles.secondary}`}
                     onClick={() => {
-                      router.push('/chamber-details')
+                      router.push('/chambers')
                       setIsMobileMenuOpen(false)
                     }}
                     whileHover={{ scale: 1.02 }}

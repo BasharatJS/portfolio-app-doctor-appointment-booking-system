@@ -13,9 +13,9 @@
   --text-muted: #94a3b8;
   --border-color: #e2e8f0;
 
-  /* Header Colors */
+  /* Header Colors - Updated to Purple */
   --header-bg-primary: #ffffff;
-  --header-bg-secondary: #1e4a3a;
+  --header-bg-secondary: #7c3aed;
   --header-text: #0f172a;
   --header-text-secondary: #ffffff;
 
@@ -24,38 +24,52 @@
   --shadow-medium: rgba(0, 0, 0, 0.15);
   --shadow-heavy: rgba(0, 0, 0, 0.25);
 
-  /* New Professional Gradient System */
-  --primary-gradient: linear-gradient(135deg, #059669 0%, #10b981 100%);
-  --primary-gradient-reverse: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  --secondary-gradient: linear-gradient(135deg, #0369a1 0%, #0ea5e9 100%);
-  --accent-gradient: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+  /* New Professional Purple Gradient System */
+  --primary-gradient: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+  --primary-gradient-reverse: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+  --secondary-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  --accent-gradient: linear-gradient(135deg, #c084fc 0%, #d8b4fe 100%);
 
-  /* Medical Theme Gradients */
-  --medical-gradient: linear-gradient(135deg, #059669 0%, #10b981 100%);
-  --success-gradient: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  /* Medical Theme Purple Gradients */
+  --medical-gradient: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+  --success-gradient: linear-gradient(135deg, #10b981 0%, #34d399 100%);
   --warning-gradient: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
-  --info-gradient: linear-gradient(135deg, #0369a1 0%, #0ea5e9 100%);
+  --info-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
 
   /* Specialized Gradients */
-  --hero-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  --hero-gradient: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
   --card-gradient: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.8) 0%,
     rgba(255, 255, 255, 0.4) 100%
   );
-  --button-gradient: linear-gradient(135deg, #059669 0%, #10b981 100%);
-  --button-gradient-reverse: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  --button-gradient: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+  --button-gradient-reverse: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
 
   /* Glass Morphism */
   --glass-bg: rgba(255, 255, 255, 0.1);
   --glass-border: rgba(255, 255, 255, 0.2);
   --glass-shadow: rgba(0, 0, 0, 0.1);
 
-  /* Medical Theme Colors */
+  /* Medical Theme Colors - Purple Focus */
+  --medical-purple: #7c3aed;
+  --medical-purple-light: #a855f7;
+  --medical-blue: #6366f1;
+  --medical-indigo: #8b5cf6;
   --medical-green: #10b981;
-  --medical-blue: #0ea5e9;
-  --medical-purple: #a855f7;
   --medical-orange: #f97316;
+
+  /* Purple Accent Colors */
+  --purple-50: #faf5ff;
+  --purple-100: #f3e8ff;
+  --purple-200: #e9d5ff;
+  --purple-300: #d8b4fe;
+  --purple-400: #c084fc;
+  --purple-500: #a855f7;
+  --purple-600: #9333ea;
+  --purple-700: #7c3aed;
+  --purple-800: #6b21a8;
+  --purple-900: #581c87;
 }
 
 /* Dark Theme */
@@ -70,9 +84,9 @@
   --text-muted: #94a3b8;
   --border-color: #334155;
 
-  /* Header Colors */
+  /* Header Colors - Updated to Purple for Dark Theme */
   --header-bg-primary: #1e293b;
-  --header-bg-secondary: #0f3027;
+  --header-bg-secondary: #6b21a8;
   --header-text: #f8fafc;
   --header-text-secondary: #f8fafc;
 
@@ -81,17 +95,17 @@
   --shadow-medium: rgba(0, 0, 0, 0.4);
   --shadow-heavy: rgba(0, 0, 0, 0.6);
 
-  /* Dark Theme Gradients */
-  --primary-gradient: linear-gradient(135deg, #047857 0%, #059669 100%);
-  --primary-gradient-reverse: linear-gradient(135deg, #059669 0%, #047857 100%);
-  --secondary-gradient: linear-gradient(135deg, #075985 0%, #0369a1 100%);
-  --accent-gradient: linear-gradient(135deg, #6d28d9 0%, #7c3aed 100%);
+  /* Dark Theme Purple Gradients */
+  --primary-gradient: linear-gradient(135deg, #6b21a8 0%, #7c3aed 100%);
+  --primary-gradient-reverse: linear-gradient(135deg, #7c3aed 0%, #6b21a8 100%);
+  --secondary-gradient: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+  --accent-gradient: linear-gradient(135deg, #a855f7 0%, #c084fc 100%);
 
-  /* Medical Dark Gradients */
-  --medical-gradient: linear-gradient(135deg, #047857 0%, #059669 100%);
-  --success-gradient: linear-gradient(135deg, #047857 0%, #059669 100%);
+  /* Medical Dark Purple Gradients */
+  --medical-gradient: linear-gradient(135deg, #6b21a8 0%, #7c3aed 100%);
+  --success-gradient: linear-gradient(135deg, #059669 0%, #10b981 100%);
   --warning-gradient: linear-gradient(135deg, #c2410c 0%, #ea580c 100%);
-  --info-gradient: linear-gradient(135deg, #075985 0%, #0369a1 100%);
+  --info-gradient: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
 
   /* Specialized Dark Gradients */
   --hero-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
@@ -100,18 +114,20 @@
     rgba(30, 41, 59, 0.8) 0%,
     rgba(30, 41, 59, 0.4) 100%
   );
-  --button-gradient: linear-gradient(135deg, #047857 0%, #059669 100%);
-  --button-gradient-reverse: linear-gradient(135deg, #059669 0%, #047857 100%);
+  --button-gradient: linear-gradient(135deg, #6b21a8 0%, #7c3aed 100%);
+  --button-gradient-reverse: linear-gradient(135deg, #7c3aed 0%, #6b21a8 100%);
 
   /* Dark Glass Morphism */
   --glass-bg: rgba(30, 41, 59, 0.1);
   --glass-border: rgba(148, 163, 184, 0.1);
   --glass-shadow: rgba(0, 0, 0, 0.3);
 
-  /* Medical Dark Colors */
-  --medical-green: #059669;
-  --medical-blue: #0369a1;
+  /* Medical Dark Colors - Purple Focus */
   --medical-purple: #7c3aed;
+  --medical-purple-light: #a855f7;
+  --medical-blue: #6366f1;
+  --medical-indigo: #8b5cf6;
+  --medical-green: #10b981;
   --medical-orange: #ea580c;
 }
 
@@ -196,7 +212,7 @@ a {
 .btn-primary {
   background: var(--button-gradient);
   color: white;
-  box-shadow: 0 4px 15px var(--shadow-light);
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
 }
 
 .btn-primary::before {
@@ -205,7 +221,7 @@ a {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px var(--shadow-medium);
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.4);
 }
 
 .btn-primary:hover::before {

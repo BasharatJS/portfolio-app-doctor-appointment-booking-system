@@ -11,7 +11,7 @@
   overflow: hidden;
 }
 
-/* Background Pattern */
+/* Background Pattern - Updated with Purple Colors */
 .backgroundPattern {
   position: absolute;
   top: 0;
@@ -20,27 +20,27 @@
   height: 100%;
   background: radial-gradient(
       circle at 20% 50%,
-      rgba(16, 185, 129, 0.05) 0%,
+      rgba(124, 58, 237, 0.05) 0%,
       transparent 50%
     ),
     radial-gradient(
       circle at 80% 20%,
-      rgba(3, 105, 161, 0.05) 0%,
+      rgba(99, 102, 241, 0.05) 0%,
       transparent 50%
     ),
     radial-gradient(
       circle at 40% 80%,
-      rgba(124, 58, 237, 0.05) 0%,
+      rgba(168, 85, 247, 0.05) 0%,
       transparent 50%
     );
   z-index: 1;
   pointer-events: none;
 }
 
-/* Floating Elements */
+/* Floating Elements - Updated to Purple */
 .floatingElement {
   position: absolute;
-  color: var(--medical-green);
+  color: var(--medical-purple);
   opacity: 0.3;
   z-index: 1;
   pointer-events: none;
@@ -111,7 +111,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 32px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.3);
   margin: 0 auto;
 }
 
@@ -140,20 +140,19 @@
   gap: 0.5rem; /* REDUCED gap between elements */
 }
 
-/* FIXED: Doctor Name - Reduced margin bottom */
+/* FIXED: Doctor Name - Updated with Purple Gradient */
 .doctorName {
-  /* background: var(--primary-gradient); */
-  background: linear-gradient(90deg, #10b981 0%, #0ea5e9 50%, #a855f7 100%);
+  background: linear-gradient(90deg, #7c3aed 0%, #a855f7 50%, #c084fc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   font-size: 3.5rem;
   font-weight: 900;
-  text-shadow: 0 2px 4px rgba(16, 185, 129, 0.1);
+  text-shadow: 0 2px 4px rgba(124, 58, 237, 0.1);
   margin-bottom: 0.25rem; /* REDUCED from 1rem */
 }
 
-/* FIXED: Animated Three-Color Gradient Line - Width matches Dr. Afroz */
+/* FIXED: Animated Purple Gradient Line - Width matches Dr. Afroz */
 .gradientLine {
   height: 4px;
   width: 300px;
@@ -161,9 +160,9 @@
   margin: 0.25rem auto; /* REDUCED margins */
   position: relative;
   overflow: hidden;
-  background: linear-gradient(90deg, #10b981 0%, #0ea5e9 50%, #a855f7 100%);
+  background: linear-gradient(90deg, #7c3aed 0%, #a855f7 50%, #c084fc 100%);
   transform-origin: left center;
-  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.4);
 }
 
 /* FIXED: Animated flowing gradient effect */
@@ -263,7 +262,7 @@
 }
 
 /* ===========================
-   SERVICES SECTION
+   SERVICES SECTION - Updated to Purple
    =========================== */
 
 .servicesSection {
@@ -286,7 +285,7 @@
 }
 
 .sectionTitle svg {
-  color: var(--medical-green);
+  color: var(--medical-purple);
 }
 
 .servicesGrid {
@@ -300,8 +299,8 @@
   align-items: center;
   gap: 0.75rem;
   padding: 1rem;
-  background: rgba(16, 185, 129, 0.08);
-  border: 1px solid rgba(16, 185, 129, 0.15);
+  background: rgba(124, 58, 237, 0.08);
+  border: 1px solid rgba(124, 58, 237, 0.15);
   border-radius: 12px;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
@@ -309,14 +308,14 @@
 }
 
 .serviceItem:hover {
-  background: rgba(16, 185, 129, 0.15);
-  border-color: rgba(16, 185, 129, 0.3);
+  background: rgba(124, 58, 237, 0.15);
+  border-color: rgba(124, 58, 237, 0.3);
   transform: translateX(8px);
-  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.2);
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.2);
 }
 
 .serviceItem svg {
-  color: var(--medical-green);
+  color: var(--medical-purple);
   flex-shrink: 0;
 }
 
@@ -328,7 +327,7 @@
 }
 
 /* ===========================
-   QUALIFICATIONS SECTION
+   QUALIFICATIONS SECTION - Updated to Purple/Indigo
    =========================== */
 
 .qualificationsSection {
@@ -350,8 +349,8 @@
   align-items: center;
   gap: 0.75rem;
   padding: 1.25rem;
-  background: rgba(3, 105, 161, 0.08);
-  border: 1px solid rgba(3, 105, 161, 0.15);
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(99, 102, 241, 0.15);
   border-radius: 16px;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
@@ -361,10 +360,10 @@
 }
 
 .qualificationItem:hover {
-  background: rgba(3, 105, 161, 0.15);
-  border-color: rgba(3, 105, 161, 0.3);
+  background: rgba(99, 102, 241, 0.15);
+  border-color: rgba(99, 102, 241, 0.3);
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(3, 105, 161, 0.25);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.25);
 }
 
 .qualificationItem svg {
@@ -461,7 +460,7 @@
 }
 
 /* ===========================
-   CTA SECTION
+   CTA SECTION - Updated to Purple Gradient
    =========================== */
 
 .ctaSection {
@@ -471,7 +470,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 20px 40px rgba(124, 58, 237, 0.3);
 }
 
 .ctaSection::before {
@@ -691,25 +690,25 @@
   border-color: rgba(51, 65, 85, 0.6);
 }
 
-/* Dark theme adjustments for better contrast */
+/* Dark theme adjustments for better contrast - Updated to Purple */
 [data-theme='dark'] .serviceItem {
-  background: rgba(16, 185, 129, 0.12);
-  border-color: rgba(16, 185, 129, 0.2);
+  background: rgba(124, 58, 237, 0.12);
+  border-color: rgba(124, 58, 237, 0.2);
 }
 
 [data-theme='dark'] .serviceItem:hover {
-  background: rgba(16, 185, 129, 0.18);
-  border-color: rgba(16, 185, 129, 0.35);
+  background: rgba(124, 58, 237, 0.18);
+  border-color: rgba(124, 58, 237, 0.35);
 }
 
 [data-theme='dark'] .qualificationItem {
-  background: rgba(3, 105, 161, 0.12);
-  border-color: rgba(3, 105, 161, 0.2);
+  background: rgba(99, 102, 241, 0.12);
+  border-color: rgba(99, 102, 241, 0.2);
 }
 
 [data-theme='dark'] .qualificationItem:hover {
-  background: rgba(3, 105, 161, 0.18);
-  border-color: rgba(3, 105, 161, 0.35);
+  background: rgba(99, 102, 241, 0.18);
+  border-color: rgba(99, 102, 241, 0.35);
 }
 
 /* ===========================
@@ -730,10 +729,10 @@
   }
 }
 
-/* Focus states */
+/* Focus states - Updated to Purple */
 .highlightCard:focus-visible,
 .serviceItem:focus-visible,
 .qualificationItem:focus-visible {
-  outline: 2px solid var(--medical-green);
+  outline: 2px solid var(--medical-purple);
   outline-offset: 4px;
 }

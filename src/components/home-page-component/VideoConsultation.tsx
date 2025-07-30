@@ -33,7 +33,7 @@ import AppointmentModal from '@/components/modal/AppointmentModal'
 
 const VideoConsultation: React.FC<VideoConsultationProps> = ({
   className = '',
-  doctorName = 'Dr. Afroz Ahmed',
+  doctorName = 'Dr. Satya Sadhan Ray',
   appLink = 'https://bit.ly/docon-app',
   timings = 'Monday to Sunday 9:15 pm to 10:15 pm',
 }) => {

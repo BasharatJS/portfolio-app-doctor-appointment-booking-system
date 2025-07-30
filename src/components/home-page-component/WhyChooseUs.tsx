@@ -35,7 +35,7 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ className = '' }) => {
   const isInView = useInView(ref, { once: true, amount: 0.2 })
 
   // ===========================
-  // STATIC DATA - EXPANDED TO 6 CARDS
+  // STATIC DATA - UPDATED FIRST CARD TO PURPLE
   // ===========================
   const features: WhyChooseUsFeature[] = [
     {
@@ -43,10 +43,10 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ className = '' }) => {
       icon: Award,
       title: 'Experienced Doctor',
       description:
-        'Dr. Afroz brings over 10+ years of specialized pediatric expertise with proven track record in child healthcare.',
+        'Dr. Satya brings over 10+ years of specialized pediatric expertise with proven track record in child healthcare.',
       stats: '10+ Years',
-      color: '#059669',
-      colorClass: 'green',
+      color: '#7c3aed', // UPDATED: Changed from green to purple
+      colorClass: 'purple', // UPDATED: Changed from 'green' to 'purple'
       benefits: [
         'MBBS, MD Pediatrics',
         'Specialized Training',
@@ -60,7 +60,7 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ className = '' }) => {
       description:
         'Schedule appointments effortlessly with our user-friendly online booking system available 24/7 for your convenience.',
       stats: '24/7 Available',
-      color: '#0369a1',
+      color: '#6366f1', // UPDATED: Changed to indigo
       colorClass: 'blue',
       benefits: [
         'Instant Confirmation',
@@ -75,8 +75,8 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ className = '' }) => {
       description:
         "Join our community of 500+ satisfied families who trust us with their children's health and wellbeing.",
       stats: '500+ Families',
-      color: '#7c3aed',
-      colorClass: 'purple',
+      color: '#8b5cf6', // UPDATED: Changed to lighter purple
+      colorClass: 'indigo', // UPDATED: Changed to 'indigo'
       benefits: ['High Success Rate', 'Positive Reviews', 'Family Referrals'],
     },
     {

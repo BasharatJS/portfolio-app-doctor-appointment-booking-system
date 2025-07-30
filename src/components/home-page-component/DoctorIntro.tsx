@@ -32,34 +32,35 @@ const DoctorIntro: React.FC<DoctorIntroProps> = ({ className = '' }) => {
   const ref = React.useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
 
+  // Updated highlights with beautiful purple color combinations
   const highlights: Highlight[] = [
     {
       id: 'papers',
       icon: BookOpen,
       number: '50+',
       label: 'Research Papers',
-      color: '#059669',
+      color: '#7c3aed', // Primary Purple
     },
     {
       id: 'experience',
       icon: Award,
       number: '10+',
       label: 'Years Experience',
-      color: '#0369a1',
+      color: '#6366f1', // Indigo Blue
     },
     {
       id: 'teaching',
       icon: GraduationCap,
       number: '100+',
       label: 'Students Taught',
-      color: '#7c3aed',
+      color: '#a855f7', // Light Purple
     },
     {
       id: 'patients',
       icon: Heart,
       number: '500+',
       label: 'Happy Patients',
-      color: '#ea580c',
+      color: '#8b5cf6', // Medium Purple
     },
   ]
 
@@ -177,9 +178,9 @@ const DoctorIntro: React.FC<DoctorIntroProps> = ({ className = '' }) => {
             variants={localItemVariants}
           >
             <h2 className={styles.mainTitle}>
-              <span className={styles.doctorName}>Dr. Afroz Ahmed</span>
+              <span className={styles.doctorName}>Dr. Satya Sadhan Ray</span>
 
-              {/* FIXED: Three-color animated gradient line */}
+              {/* FIXED: Three-color animated gradient line - Now Purple themed */}
               <motion.div
                 className={styles.gradientLine}
                 initial={{ scaleX: 0, opacity: 0 }}
@@ -196,7 +197,7 @@ const DoctorIntro: React.FC<DoctorIntroProps> = ({ className = '' }) => {
               />
 
               <span className={styles.titleDescription}>
-                Best Pediatrician in Pune
+                Best Pediatrician in Kolkata
               </span>
             </h2>
           </motion.div>
@@ -208,16 +209,16 @@ const DoctorIntro: React.FC<DoctorIntroProps> = ({ className = '' }) => {
           >
             <div className={styles.introText}>
               <p className={styles.paragraph}>
-                Dr. Afroz is a{' '}
+                Dr. Satya Sadhan Ray is a{' '}
                 <span className={styles.highlight}>
-                  highly qualified and experienced pediatrician based in Nagpur
+                  highly qualified and experienced pediatrician based in Kolkata
                 </span>
                 . With years of expertise in the field of child healthcare, Dr.
-                Afroz is renowned for providing the best possible care to young
-                patients. As a specialist in pediatric medicine, Dr. Afroz
-                offers a wide range of services including routine check-ups,
-                pediatric intensive care, vaccinations, and all sorts of
-                pediatric illness.
+                Satya Sadhan Ray is renowned for providing the best possible
+                care to young patients. As a specialist in pediatric medicine,
+                Dr. Satya Sadhan Ray offers a wide range of services including
+                routine check-ups, pediatric intensive care, vaccinations, and
+                all sorts of pediatric illness.
               </p>
               <p className={styles.paragraph}>
                 Dr. Afroz has a patient-centric approach, which means putting
@@ -230,17 +231,17 @@ const DoctorIntro: React.FC<DoctorIntroProps> = ({ className = '' }) => {
               <p className={styles.paragraph}>
                 As an expert{' '}
                 <span className={styles.highlight}>
-                  pediatric doctor in Nagpur
+                  pediatric doctor in Kolkata
                 </span>
-                , Dr. Afroz is also actively involved in research and education
-                in the field of pediatric medicine. Regular attendance at
-                conferences and seminars ensures staying up-to-date with the
+                , Dr. Satya Sadhan Ray is also actively involved in research and
+                education in the field of pediatric medicine. Regular attendance
+                at conferences and seminars ensures staying up-to-date with the
                 latest developments, ensuring patients receive the most
-                effective and innovative care available. Dr. Afroz has published
-                more than 50 research papers in different national and
-                international peer-reviewed journals and contributed chapters in
-                many books. As a post graduate teacher, Dr. Afroz teaches DCH
-                and MD Pediatric Medicine trainees.
+                effective and innovative care available. Dr. Satya Sadhan Ray
+                has published more than 50 research papers in different national
+                and international peer-reviewed journals and contributed
+                chapters in many books. As a post graduate teacher, Dr. Satya
+                Sadhan Ray teaches DCH and MD Pediatric Medicine trainees.
               </p>
             </div>
           </motion.div>

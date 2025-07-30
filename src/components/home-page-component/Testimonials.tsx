@@ -250,7 +250,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({
               transition={{ delay: 0.3, duration: 0.6 }}
             >
               What Parents Say About
-              <span className={styles.gradientText}> Dr. Afroz</span>
+              <span className={styles.gradientText}> Dr. Satya Sadhan Ray</span>
             </motion.h2>
 
             <motion.p

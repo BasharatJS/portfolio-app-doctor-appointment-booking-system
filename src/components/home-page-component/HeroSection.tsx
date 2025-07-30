@@ -62,10 +62,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   // ===========================
   // EVENT HANDLERS
   // ===========================
-  // const handleBookAppointment = () => {
-  //   onBookAppointment?.()
-  //   router.push('/appointment')
-  // }
   const handleAppointmentClick = () => {
     setIsAppointmentModalOpen(true)
   }
@@ -73,6 +69,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   const handleModalClose = () => {
     setIsAppointmentModalOpen(false)
   }
+
   const handleExplorePlans = () => {
     onExplorePlans?.()
     const plansSection = document.getElementById('plans-section')
@@ -84,34 +81,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   // ===========================
   return (
     <section className={styles.heroSection}>
-      {/* Medical Background Animation */}
-      <div className={styles.medicalBackground}>
-        {/* Animated Medical Plus Icons */}
-        {[...Array(15)].map((_, i) => (
-          <motion.div
-            key={i}
-            className={styles.medicalIcon}
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${i * 0.3}s`,
-            }}
-            animate={{
-              y: [-15, 15, -15],
-              rotate: [0, 360],
-              opacity: [0.6, 0.9, 0.6],
-            }}
-            transition={{
-              duration: 6 + (i % 4),
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          >
-            +
-          </motion.div>
-        ))}
-      </div>
-
       {/* Main Content Container */}
       <div className={styles.container}>
         <motion.div
@@ -223,7 +192,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 <div className={styles.doctorImage}>
                   <img
                     src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=300&h=300&fit=crop&crop=face&auto=format&q=80"
-                    alt="Dr. Afroz - Pediatric Specialist"
+                    alt="Dr Satya Sadhan Ray - Pediatric Specialist"
                     className={styles.doctorPhoto}
                   />
 
@@ -282,7 +251,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
               {/* Doctor Information */}
               <div className={styles.doctorInfo}>
-                <h3 className={styles.doctorName}>Dr. Afroz</h3>
+                <h3 className={styles.doctorName}>Dr. Satya Sadhan Ray</h3>
                 <p className={styles.doctorSpecialty}>Pediatric Specialist</p>
 
                 {/* Credentials */}

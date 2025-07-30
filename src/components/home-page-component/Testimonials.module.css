@@ -16,8 +16,8 @@
   bottom: 0;
   background: linear-gradient(
     135deg,
-    rgba(5, 150, 105, 0.02) 0%,
-    rgba(16, 185, 129, 0.02) 100%
+    rgba(124, 58, 237, 0.02) 0%,
+    rgba(168, 85, 247, 0.02) 100%
   );
   pointer-events: none;
 }
@@ -54,7 +54,7 @@
   font-size: 0.875rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
 }
 
 .badgeIcon {
@@ -150,7 +150,7 @@
   margin-bottom: 3rem;
 }
 
-/* Navigation Buttons */
+/* Navigation Buttons - Updated to Purple */
 .navButton {
   position: absolute;
   top: 50%;
@@ -166,16 +166,23 @@
   align-items: center;
   justify-content: center;
   z-index: 10;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
+  /* Anti-flickering optimizations */
+  -webkit-transform: translateY(-50%) translateZ(0);
+  transform: translateY(-50%) translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform, background, border-color, box-shadow;
 }
 
 .navButton:hover {
   background: var(--primary-gradient);
   color: white;
   border-color: transparent;
-  box-shadow: 0 12px 35px rgba(5, 150, 105, 0.3);
+  box-shadow: 0 12px 35px rgba(124, 58, 237, 0.3);
+  transform: translateY(-50%) translateZ(0) scale(1.05);
 }
 
 .prevButton {
@@ -186,35 +193,84 @@
   right: -28px;
 }
 
-/* Testimonials Grid */
+/* Testimonials Grid - Fixed Flickering */
 .testimonialsGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   min-height: 400px;
+  /* Anti-flickering optimizations */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
-/* Testimonial Card */
+/* Testimonial Card - Purple Hover Effect + Anti-Flickering */
 .testimonialCard {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: 20px;
   padding: 2rem;
   position: relative;
-  transition: all 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.3s ease;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
   height: fit-content;
+  overflow: hidden;
+  /* Anti-flickering optimizations */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform, box-shadow, border-color;
+}
+
+/* Purple Gradient Hover Effect - Left to Right */
+.testimonialCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(192, 132, 252, 0.1) 0%,
+    rgba(168, 85, 247, 0.15) 50%,
+    rgba(124, 58, 237, 0.2) 100%
+  );
+  transition: left 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 20px;
+  z-index: 0;
+  pointer-events: none;
+  /* Anti-flickering optimizations */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.testimonialCard:hover::before {
+  left: 0;
 }
 
 .testimonialCard:hover {
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-  border-color: rgba(5, 150, 105, 0.2);
+  transform: translateZ(0) translateY(-8px) scale(1.01);
+  box-shadow: 0 20px 50px rgba(124, 58, 237, 0.15);
+  border-color: rgba(124, 58, 237, 0.3);
 }
 
-/* Quote Icon */
+/* Ensure all card content is above the gradient overlay */
+.testimonialCard > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Quote Icon - Updated to Purple */
 .quoteIcon {
   position: absolute;
   top: -12px;
@@ -227,7 +283,8 @@
   align-items: center;
   justify-content: center;
   color: white;
-  box-shadow: 0 8px 25px rgba(5, 150, 105, 0.3);
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);
+  z-index: 2;
 }
 
 /* Card Header */
@@ -250,6 +307,11 @@
   border-radius: 50%;
   overflow: hidden;
   position: relative;
+  /* Anti-flickering optimizations */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .avatar img {
@@ -324,6 +386,9 @@
 
 .star {
   transition: all 0.2s ease;
+  /* Anti-flickering optimizations */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .star.filled {
@@ -353,7 +418,7 @@
   flex: 1;
 }
 
-/* Verified Badge */
+/* Verified Badge - Keep Green as Requested */
 .verifiedBadge {
   display: flex;
   align-items: center;
@@ -382,7 +447,7 @@
   font-weight: 700;
 }
 
-/* Pagination */
+/* Pagination - Updated to Purple */
 .pagination {
   display: flex;
   justify-content: center;
@@ -397,19 +462,26 @@
   border: none;
   background: var(--border-color);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* Anti-flickering optimizations */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform, background;
 }
 
 .dot.active {
   background: var(--primary-gradient);
-  transform: scale(1.2);
+  transform: translateZ(0) scale(1.2);
 }
 
 .dot:hover {
-  background: var(--medical-green);
+  background: var(--medical-purple);
+  transform: translateZ(0) scale(1.1);
 }
 
-/* Call to Action */
+/* Call to Action - Updated to Purple */
 .cta {
   text-align: center;
   padding: 3rem 2rem;
@@ -442,10 +514,16 @@
   font-size: 1rem;
   font-family: 'Inter', sans-serif;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 25px rgba(5, 150, 105, 0.3);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);
   position: relative;
   overflow: hidden;
+  /* Anti-flickering optimizations */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform, box-shadow;
 }
 
 .ctaButton::before {
@@ -456,8 +534,11 @@
   width: 100%;
   height: 100%;
   background: var(--primary-gradient-reverse);
-  transition: all 0.4s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index: -1;
+  /* Anti-flickering optimizations */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .ctaButton:hover::before {
@@ -465,7 +546,8 @@
 }
 
 .ctaButton:hover {
-  box-shadow: 0 12px 35px rgba(5, 150, 105, 0.4);
+  transform: translateZ(0) translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 35px rgba(124, 58, 237, 0.4);
 }
 
 /* Responsive Design */
@@ -571,7 +653,7 @@
   }
 }
 
-/* Dark Theme Adjustments */
+/* Dark Theme Adjustments - Updated to Purple */
 [data-theme='dark'] .testimonialsSection {
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
 }
@@ -581,13 +663,41 @@
 }
 
 [data-theme='dark'] .testimonialCard:hover {
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 20px 50px rgba(124, 58, 237, 0.2);
 }
 
 [data-theme='dark'] .navButton {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
+[data-theme='dark'] .navButton:hover {
+  box-shadow: 0 12px 35px rgba(124, 58, 237, 0.4);
+}
+
 [data-theme='dark'] .cta {
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .testimonialCard,
+  .navButton,
+  .ctaButton,
+  .dot,
+  .star {
+    transition: none;
+    animation: none;
+  }
+
+  .testimonialCard:hover,
+  .navButton:hover,
+  .ctaButton:hover,
+  .dot:hover {
+    transform: none;
+  }
+
+  .testimonialCard::before,
+  .ctaButton::before {
+    transition: none;
+  }
 }
